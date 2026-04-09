@@ -1,4 +1,4 @@
-import { scrollToHash } from '../../utils/scrollToHash'
+
 
 type UseCase = { title: string; description: string }
 
@@ -11,7 +11,6 @@ type UseCase = { title: string; description: string }
 export default function IndustriesSection({
   sectionBg = '#f6f7f9',
   imagePanelBg = '#d9ecf4',
-  imageCardBg = '#cae4ef',
   productImage,
   productImageAlt = 'Product use case',
   badge1 = 'Custom Sizes & Thickness',
@@ -66,7 +65,7 @@ export default function IndustriesSection({
             {useCases.map(({ title, description }) => (
               <div key={title} className="rounded-2xl bg-white p-7 shadow-sm border border-slate-100 transition-all hover:border-blue-200 hover:shadow-md">
                 <div className="flex flex-col-2 items-start gap-4">
-                  <RadioDot className="h-6 w-6" />
+                  <RadioDot />
                   <div>
                     <h3 className="text-[17px] font-bold text-slate-900">{title}</h3>
                     <p className="mt-2 text-sm leading-relaxed text-slate-600">{description}</p>
@@ -82,7 +81,7 @@ export default function IndustriesSection({
 }
 
 /* ─── tiny helper ─────────────────────────────────────────── */
-const RadioDot = ({ className = 'h-5 w-5' }: { className?: string }) => (
+const RadioDot = () => (
    <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full border-5 border-blue-500 bg-white shadow-sm">
     {/* <span className="h-2.5 w-2.5 rounded-full bg-blue-500" /> */}
   </span>
