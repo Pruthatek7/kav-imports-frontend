@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kav-imports-frontend.vercel.app/sitemap.xml
