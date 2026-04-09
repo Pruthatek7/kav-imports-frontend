@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom'
 import { scrollToHash } from '../../utils/scrollToHash'
 import logo from '../../assets/logo.png'
 import rippleEffect from '../../assets/Group 237494 (1).png'
@@ -22,6 +23,7 @@ export default function LandingFooter({
   ctaSubtitle?: string
   ctaImage?: string
 }) {
+  const navigate = useNavigate()
   return (
     <footer className="relative bg-white font-sans overflow-hidden">
       {/* Blue CTA Banner Section */}
@@ -112,7 +114,19 @@ export default function LandingFooter({
               <h4 className="font-montserrat text-lg font-bold">Products</h4>
               <ul className="mt-6 space-y-4">
                 {PRODUCTS.map((item) => (
-                  <ListItem key={item} label={item} />
+                  <ListItem 
+                    key={item} 
+                    label={item} 
+                    onClick={() => {
+                      if (item === 'Garbage Bags') {
+                        navigate('/')
+                        window.scrollTo(0, 0)
+                      } else if (item === 'Poly Mailer Bags') {
+                        navigate('/poly-mailer-bags')
+                        window.scrollTo(0, 0)
+                      }
+                    }}
+                  />
                 ))}
               </ul>
             </div>
@@ -194,7 +208,7 @@ function ListItem({ label, onClick }: { label: string; onClick?: () => void }) {
       <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-slate-500 transition-colors group-hover:bg-blue-400" />
       <button 
         onClick={onClick}
-        className="text-[13px] text-slate-400 transition hover:text-blue-400 text-left"
+        className="text-[13px] text-slate-400 transition hover:text-blue-400 text-left cursor-pointer"
       >
         {label}
       </button>
