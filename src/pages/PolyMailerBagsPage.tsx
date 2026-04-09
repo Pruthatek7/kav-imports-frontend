@@ -11,10 +11,7 @@ import FaqSection, { type Faq } from '../components/landing/FaqSection'
 
 import bagImage from '../assets/Image 17.png'
 import sizeFrameImage from '../assets/Frame 1000003303 (1).png'
-import heroPatternLeft from '../assets/Group 237492.png'
-import heroPatternRight from '../assets/Group 237493.png'
 import polyBagsKeyFeaturesImage from '../assets/Image 7.png'
-import circleBg from '../assets/Group 1410136862.png'
 import customizedMailerBagImage from '../assets/Image 14 (1).png'
 import polybagImage from '../assets/Image 14.png'
 import testimonialAvatar from '../assets/Frame 52.png'
@@ -26,7 +23,7 @@ import footerPolyBagImage from '../assets/image 8.png'
 const NAV_LINKS: NavLink[] = [
   { label: 'Home', href: '#top' },
   { label: 'Features', href: '#features' },
-  { label: 'Specifications', href: '#product-sizes' },
+  { label: 'Specifications', href: '#specifications' },
   { label: 'Customization', href: '#customization' },
   { label: 'Testimonials', href: '#testimonials' },
   { label: 'Bulk Order', href: '#contact' },

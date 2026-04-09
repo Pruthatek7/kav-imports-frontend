@@ -6,7 +6,6 @@
 export default function TestimonialsSection({
   productImage,
   productImageAlt = 'Featured product',
-  avatarImage,
   reviewCount = '11.6k',
   reviewerName = 'Maithali Raj',
   reviewerTitle = 'Restaurant Owner',
