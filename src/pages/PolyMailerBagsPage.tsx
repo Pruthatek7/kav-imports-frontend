@@ -87,13 +87,6 @@ const FEATURES = [
   { heading: 'Lightweight & Cost-Effective', desc: 'Reduces shipping weight and overall logistics costs, ideal for eCommerce fulfillment.' },
 ] as const
 
-/* ─── Shared tiny helpers ────────────────────────────────── */
-const RadioDot = () => (
-  <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full border-2 border-blue-300 bg-white shadow-sm">
-    <span className="h-2.5 w-2.5 rounded-full bg-blue-500" />
-  </span>
-)
-
 /* ─── Page ───────────────────────────────────────────────── */
 export default function PolyMailerBagsPage() {
   return (
