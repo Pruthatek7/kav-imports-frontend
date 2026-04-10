@@ -9,10 +9,11 @@ import CustomizationSection from '../components/landing/CustomizationSection'
 import TestimonialsSection from '../components/landing/TestimonialsSection'
 import FaqSection, { type Faq } from '../components/landing/FaqSection'
 
-import bagImage from '../assets/image 17.png'
+import bagImage from '../assets/Group 1410136867.png'
+import industriesBgSectionImage from '../assets/Frame 1000003310 (1).png';
 import sizeFrameImage from '../assets/Frame 1000003303 (1).png'
 import polyBagsKeyFeaturesImage from '../assets/image 7.png'
-import customizedMailerBagImage from '../assets/image 14 (1).png'
+import customizedMailerBagImage from '../assets/Group 1410136869 (1).png'
 import polybagImage from '../assets/image 14.png'
 import testimonialAvatar from '../assets/Frame 52.png'
 import { scrollToHash } from '../utils/scrollToHash'
@@ -95,9 +96,9 @@ export default function PolyMailerBagsPage() {
 
       <main>
         {/* ── Hero ─────────────────────────────────────────── */}
-        <section className="relative overflow-hidden bg-[#eef3fe] py-20 lg:py-28">
-          <div className="mx-auto grid max-w-[1240px] items-center gap-16 px-4 lg:grid-cols-2 lg:px-8">
-            <div className="relative z-10">
+        <section className="relative overflow-hidden bg-[#eef3fe] py-20 lg:py-20">
+          <div className="mx-auto grid gap-16 items-center lg:grid-cols-2 ">
+            <div className="relative z-10 px-4 lg:px-24">
               <span className="inline-block rounded-full border border-blue-200 bg-white/80 px-5 py-2 text-sm font-bold tracking-tight text-blue-600">
                 Ship Smarter. Pack Stronger. Deliver Better.
               </span>
@@ -120,11 +121,11 @@ export default function PolyMailerBagsPage() {
               </div>
             </div>
 
-            <div className="relative mx-auto flex w-full max-w-[580px] items-center justify-center">
+            <div className="relative mx-auto flex w-full items-end justify-end">
               <img src={bagImage} alt="Poly mailer bag" className="relative z-10 w-full drop-shadow-[0_45px_100px_rgba(0,0,0,0.18)]" />
             </div>
           </div>
-        </section>
+        </section>  
 
         {/* ── Shared components ─────────────────────────────── */}
         <TrustedBySection />
@@ -181,10 +182,10 @@ export default function PolyMailerBagsPage() {
 
         <IndustriesSection
           productImage={polybagImage}
+          sectionBgImage={industriesBgSectionImage}
           productImageAlt="Poly mailer use case"
           badge2="Custom Sizes & Thickness"
           badge1="Waterproof & Dustproof"
-          imagePanelBg="#cce8fd"
           imageCardBg="#cce8fd"
           useCases={INDUSTRIES}
         />
@@ -200,7 +201,7 @@ export default function PolyMailerBagsPage() {
           intro="KAV Imports offers tailored poly mailer bag solutions to match your specific requirements. We provide:"
           bulletPoints={CUSTOMIZATION_BULLETS}
           footerNote="Our team works closely with businesses to deliver reliable and cost-effective shipping packaging products."
-          panelBg="#cbe0fb"
+          panelBg="#C1D8FF"
           productImage={customizedMailerBagImage}
           productImageAlt="Custom poly mailer bags"
         />

@@ -9,7 +9,7 @@ export default function CustomizationSection({
   intro,
   bulletPoints,
   footerNote,
-  panelBg = '#bfd2f4',
+  panelBg = '#B0CDFF',
   productImage,
   productImageAlt = 'Custom product',
   ctaHref = '#contact',
@@ -35,16 +35,16 @@ export default function CustomizationSection({
         </h2>
 
         <div
-          className="mt-8 grid items-center gap-12 overflow-hidden rounded-[48px] p-3 lg:grid-cols-2 lg:p-12"
+          className="mt-8 grid items-center gap-12 overflow-hidden rounded-[48px] lg:grid-cols-2 lg:pl-10 lg:py-10"
           style={{ background: panelBg }}
         >
           <div>
             <h3 className="text-3xl font-extrabold leading-tight text-slate-900 lg:text-4xl">{heading}</h3>
             {intro && (
-              <p className="mt-6 text-[17px] font-medium leading-relaxed text-slate-700">{intro}</p>
+              <p className="mt-2 text-[17px] font-medium leading-relaxed text-slate-700">{intro}</p>
             )}
             
-            <ul className="mt-8 space-y-3">
+            <ul className="mt-2 space-y-3">
               {bulletPoints.map((item) => (
                 <li key={item} className="flex items-center gap-3 text-[15px] font-bold text-slate-800 lg:text-base">
                   <div className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-blue-500 text-white">
@@ -58,12 +58,12 @@ export default function CustomizationSection({
             </ul>
 
             {footerNote && (
-              <p className="mt-8 text-[15px] font-bold text-slate-900">{footerNote}</p>
+              <p className="mt-2 text-[15px] font-bold text-slate-900">{footerNote}</p>
             )}
 
             <a
               href={ctaHref}
-              className="mt-10 inline-flex items-center justify-center rounded-full bg-black px-10 py-4 text-base font-bold !text-white transition hover:-translate-y-1 hover:shadow-xl active:scale-95"
+              className="mt-4 inline-flex items-center justify-center rounded-full bg-black px-10 py-4 text-base font-bold !text-white transition hover:-translate-y-1 hover:shadow-xl active:scale-95"
               onClick={(e) => {
                 e.preventDefault()
                 scrollToHash(ctaHref)
@@ -74,11 +74,11 @@ export default function CustomizationSection({
           </div>
 
           <div className="relative">
-            <div className="absolute inset-0 m-auto h-[80%] w-[80%] rounded-full bg-white/20 blur-3xl" />
+            <div className="absolute inset-0 m-auto h-[100%] w-[100%] rounded-full bg-white/20 blur-3xl" />
             <img
               src={productImage}
               alt={productImageAlt}
-              className="relative z-10 mx-auto w-full max-w-[440px] drop-shadow-[0_30px_60px_rgba(0,0,0,0.15)] transition-transform duration-500 hover:scale-105"
+              className="relative z-10 mx-auto w-full drop-shadow-[0_30px_60px_rgba(0,0,0,0.15)] transition-transform duration-500 hover:scale-105"
             />
           </div>
         </div>

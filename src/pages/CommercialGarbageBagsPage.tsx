@@ -10,7 +10,7 @@ import TestimonialsSection from '../components/landing/TestimonialsSection'
 import FaqSection, { type Faq } from '../components/landing/FaqSection'
 
 import bagImage from '../assets/image 5.png'
-import TwoBagsImage from '../assets/Group 1410136862.png'
+import TwoBagsImage from '../assets/Group 1410136870.png'
 import bagAndBinImage from '../assets/image 15.png';
 import sizeFrameImage from '../assets/Frame 1000003303.png'
 import heroPatternLeft from '../assets/Group 237495.png'
@@ -19,6 +19,7 @@ import circleBg from '../assets/Group 1410136861.png'
 import testimonialAvatar from '../assets/Frame 52.png'
 import testimonialImage from '../assets/Group 1410136864.png';
 import { scrollToHash } from '../utils/scrollToHash'
+import industriesBgSectionImage from '../assets/Frame 1000003310 (1).png';
 
 /* ─── Data ───────────────────────────────────────────────── */
 const NAV_LINKS: NavLink[] = [
@@ -219,10 +220,10 @@ export default function CommercialGarbageBagsPage() {
 
         <IndustriesSection
           productImage={bagAndBinImage}
+          sectionBgImage={industriesBgSectionImage}
           productImageAlt="Garbage bag use case"
           badge1="Custom Sizes & Thickness"
           badge2="Leak-Proof Design"
-          imagePanelBg="#d9ecf4"
           imageCardBg="#cae4ef"
           useCases={INDUSTRIES}
         />
@@ -237,7 +238,7 @@ export default function CommercialGarbageBagsPage() {
           heading="Need Custom Garbage Bags for Your Business?"
           intro="We offer customized garbage bag solutions for businesses with specific requirements. Our customization options include:"
           bulletPoints={CUSTOMIZATION_BULLETS}
-          panelBg="#bfd2f4"
+          panelBg="#C1D8FF"
           productImage={TwoBagsImage}
           productImageAlt="Custom garbage bags"
         />

@@ -10,17 +10,18 @@ type UseCase = { title: string; description: string }
  */
 export default function IndustriesSection({
   sectionBg = '#f6f7f9',
-  imagePanelBg = '#d9ecf4',
+  imageCardBg,
   productImage,
+  sectionBgImage,
   productImageAlt = 'Product use case',
   badge1 = 'Custom Sizes & Thickness',
   badge2 = 'Leak-Proof Design',
   useCases,
 }: {
   sectionBg?: string
-  imagePanelBg?: string
   imageCardBg?: string
   productImage: string
+  sectionBgImage: string
   productImageAlt?: string
   badge1?: string
   badge2?: string
@@ -36,8 +37,13 @@ export default function IndustriesSection({
         <div className="mt-16 grid gap-8 lg:grid-cols-2">
           {/* Image panel */}
           <div
-            className="group relative overflow-hidden rounded-[32px] border border-blue-100 p-4 w-100 h-100 z-10 pt-16 transition-shadow hover:shadow-xl"
-            style={{ background: imagePanelBg }}
+            className="group relative overflow-hidden rounded-[32px] border border-blue-400 p-4 w-100 h-100 z-10 pt-16 transition-shadow hover:shadow-xl"
+            style={{ 
+              backgroundImage: `url("${sectionBgImage}")`, 
+              backgroundColor: imageCardBg,
+              backgroundSize: 'cover', 
+              backgroundPosition: 'center' 
+            }}
           >
             <div className="relative z-10 mx-auto w-full">
               <img
