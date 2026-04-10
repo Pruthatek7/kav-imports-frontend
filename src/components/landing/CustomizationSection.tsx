@@ -29,13 +29,13 @@ export default function CustomizationSection({
 }) {
   return (
     <section id="customization" className="bg-white py-20 lg:py-28">
-      <div className="mx-auto max-w-[1240px] px-4 lg:px-4">
+      <div className="mx-auto px-4 lg:px-24">
         <h2 className="text-center text-3xl font-extrabold tracking-tight text-slate-900 lg:text-4xl">
           Customization <span className="text-blue-500">Options</span>
         </h2>
 
         <div
-          className="mt-8 grid items-center gap-12 overflow-hidden rounded-[48px] lg:grid-cols-2 p-8 lg:pl-10 lg:py-10"
+          className="mt-8 grid items-center gap-12 overflow-hidden rounded-[48px] md:grid-cols-2 lg:grid-cols-2 lg:pl-10 lg:py-8"
           style={{ background: panelBg }}
         >
           <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
@@ -78,6 +78,9 @@ export default function CustomizationSection({
             <img
               src={productImage}
               alt={productImageAlt}
+              width={600}
+              height={600}
+              loading="lazy"
               className="relative z-10 mx-auto w-full drop-shadow-[0_30px_60px_rgba(0,0,0,0.15)] transition-transform duration-500 hover:scale-105"
             />
           </div>

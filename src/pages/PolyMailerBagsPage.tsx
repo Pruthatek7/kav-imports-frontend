@@ -96,7 +96,7 @@ export default function PolyMailerBagsPage() {
 
       <main>
         {/* ── Hero ─────────────────────────────────────────── */}
-        <section className="relative overflow-hidden bg-[#eef3fe] py-20 lg:py-20">
+        <section className="relative overflow-hidden bg-[#DFE9FF] py-20 md:py-20 lg:py-20">
           <div className="mx-auto grid gap-12 items-center lg:grid-cols-2">
             <div className="relative z-10 px-4 lg:px-24 flex flex-col items-center text-center lg:items-start lg:text-left order-2 lg:order-1">
               <span className="inline-block rounded-full border border-blue-200 bg-white/80 px-5 py-2 text-sm font-bold tracking-tight text-blue-600">
@@ -122,7 +122,14 @@ export default function PolyMailerBagsPage() {
             </div>
 
             <div className="relative mx-auto flex w-full items-center justify-center px-0 lg:px-0 order-1 lg:order-2">
-              <img src={bagImage} alt="Poly mailer bag" className="relative z-10 w-full max-w-[500px] lg:max-w-none drop-shadow-[0_45px_100px_rgba(0,0,0,0.18)]" />
+              <img 
+                src={bagImage} 
+                alt="Poly mailer bag" 
+                width={500} 
+                height={500} 
+                fetchPriority="high" 
+                className="relative z-10 w-full max-w-[500px] lg:max-w-none drop-shadow-[0_45px_100px_rgba(0,0,0,0.18)]" 
+              />
             </div>
           </div>
         </section>  
@@ -137,8 +144,8 @@ export default function PolyMailerBagsPage() {
         />
 
         {/* ── Key Features ─────────────────────────────────── */}
-        <section id="features" className="bg-[#E8F1FF] py-20 lg:py-28">
-          <div className="mx-auto grid max-w-[1240px] items-center gap-16 px-4 lg:px-8">
+        <section id="features" className="bg-[#E8F1FF] py-20 lg:py-16">
+          <div className="mx-auto grid items-center gap-16 px-4 lg:px-16">
             <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
               <h2 className="text-4xl font-black leading-[1.05] tracking-tight text-slate-900 sm:text-5xl lg:text-[4rem]">
                 Key Features
@@ -170,9 +177,16 @@ export default function PolyMailerBagsPage() {
               </div>
             </div>
     
-            <div className="grid gap-12 lg:grid-cols-2 lg:pt-12">
-              <div className="relative mx-auto flex w-full max-w-[500px] items-center justify-center">
-                <img src={polyBagsKeyFeaturesImage} alt="Poly mailer bags" className="relative z-10 w-full drop-shadow-[0_40px_80px_rgba(0,0,0,0.15)]" />
+            <div className="grid gap-12 lg:grid-cols-2 lg:pt-0 justify-center items-center">
+              <div className="relative mx-auto flex w-full h-[400px] max-w-[500px] items-center justify-center">
+                <img 
+                  src={polyBagsKeyFeaturesImage} 
+                  alt="Poly mailer bags" 
+                  width={500} 
+                  height={500} 
+                  loading="lazy" 
+                  className="relative z-10 w-full drop-shadow-[0_40px_80px_rgba(0,0,0,0.15)]" 
+                />
               </div>
 
               <div className="flex flex-col gap-10">

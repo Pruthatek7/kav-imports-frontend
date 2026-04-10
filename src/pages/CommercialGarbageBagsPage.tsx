@@ -112,20 +112,27 @@ export default function CommercialGarbageBagsPage() {
 
       <main>
         {/* ── Hero ─────────────────────────────────────────── */}
-        <section className="relative overflow-hidden bg-[#dfe7f8] py-20 lg:py-22">
-          <img src={heroPatternLeft} alt="" aria-hidden className="pointer-events-none absolute -left-12 bottom-0 hidden w-72 select-none opacity-80 lg:block lg:w-96" />
-          <img src={heroPatternRight} alt="" aria-hidden className="pointer-events-none absolute right-0 top-0 hidden w-72 select-none opacity-90 lg:block lg:w-96" />
+        <section className="relative overflow-hidden bg-[#dfe7f8] py-20 md:py-22 lg:py-22">
+          <img src={heroPatternLeft} alt="" aria-hidden width={384} height={384} className="pointer-events-none absolute -left-12 bottom-0 hidden w-72 select-none opacity-80 lg:block lg:w-96" />
+          <img src={heroPatternRight} alt="" aria-hidden width={384} height={384} className="pointer-events-none absolute right-0 top-0 hidden w-72 select-none opacity-90 lg:block lg:w-96" />
 
-          <div className="mx-auto flex max-w-[1240px] flex-col items-center gap-16 px-4 lg:grid lg:grid-cols-2 lg:px-2">
+          <div className="mx-auto flex flex-col items-center gap-16 px-4 lg:grid lg:grid-cols-2 md:px-16 lg:px-16">
             {/* Image Content - First on Mobile, Second on Desktop */}
             <div className="relative order-1 mx-auto flex w-full max-w-[580px] items-center justify-center lg:order-2 lg:mx-0 lg:justify-end">
               {/* Background Decoration */}
               <div className="absolute inset-0 z-0 flex items-center justify-center">
-                <img src={heroMobilePattern} alt="" aria-hidden className="w-full max-w-[500px] select-none opacity-90 lg:hidden" />
+                <img src={heroMobilePattern} alt="" aria-hidden width={500} height={500} className="w-full max-w-[500px] select-none opacity-90 lg:hidden" />
                 <div className="hidden h-96 w-96 rounded-full bg-blue-400/20 blur-[80px] lg:flex" />
               </div>
               
-              <img src={bagImage} alt="Commercial garbage bag" className="relative z-10 w-full drop-shadow-[0_45px_100px_rgba(0,0,0,0.18)]" />
+              <img 
+                src={bagImage} 
+                alt="Commercial garbage bag" 
+                width={580} 
+                height={580} 
+                fetchPriority="high" 
+                className="relative z-10 w-full drop-shadow-[0_45px_100px_rgba(0,0,0,0.18)]" 
+              />
               
               {/* Floating Badges */}
               <div className="absolute -left-4 top-[30%] z-20 lg:top-[35%]">
@@ -180,7 +187,7 @@ export default function CommercialGarbageBagsPage() {
 
         {/* ── Key Features ─────────────────────────────────── */}
         <section id="features" className="bg-[#f1f3f5] py-20 lg:py-48">
-          <div className="mx-auto grid max-w-[1240px] items-center gap-16 px-4 lg:grid-cols-3 lg:px-8">
+          <div className="mx-auto grid items-center gap-16 px-4 lg:grid-cols-3 lg:px-16">
             <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
               <h2 className="text-4xl font-black leading-[1.05] tracking-tight text-slate-900 sm:text-5xl lg:text-[5rem] lg:leading-[0.95]">
                 Key<br className="hidden lg:block" /> Features
@@ -214,8 +221,8 @@ export default function CommercialGarbageBagsPage() {
 
             <div className="relative mx-auto flex w-full max-w-[500px] items-center justify-center">
               <div className="absolute inset-0 m-auto rounded-full bg-slate-300/40 blur-2xl" />
-              <img src={circleBg} alt="" aria-hidden className="relative z-0 w-full animate-pulse-slow opacity-80" />
-              <img src={bagImage} alt="Heavy-duty garbage bags" className="absolute top-5 right-10 z-10 drop-shadow-[0_30px_60px_rgba(0,0,0,0.2)]" />
+              <img src={circleBg} alt="" aria-hidden width={500} height={500} loading="lazy" className="relative z-0 w-full animate-pulse-slow opacity-80" />
+              <img src={bagImage} alt="Heavy-duty garbage bags" width={400} height={400} loading="lazy" className="absolute top-5 right-10 z-10 drop-shadow-[0_30px_60px_rgba(0,0,0,0.2)]" />
             </div>
 
             <div className="flex flex-col gap-8 lg:pl-12">

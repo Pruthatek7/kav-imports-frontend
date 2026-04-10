@@ -62,7 +62,7 @@ export default function LandingHeader({
             className="flex items-center gap-3"
             onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }) }}
           >
-            <img src={logo} alt="KAV Imports" className="h-12 w-auto lg:h-16" />
+            <img src={logo} alt="KAV Imports" width={180} height={64} className="h-12 w-auto lg:h-16" />
           </a>
 
           {/* Desktop nav */}
@@ -103,7 +103,7 @@ export default function LandingHeader({
               href="#"
               onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }) }}
             >
-              <img src={logo} alt="KAV Imports" className="h-12 w-auto" />
+              <img src={logo} alt="KAV Imports" width={120} height={48} className="h-12 w-auto" />
             </a>
           </div>
 

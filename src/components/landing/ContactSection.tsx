@@ -24,7 +24,7 @@ export default function ContactSection({
 
   return (
     <section id="contact" className="bg-[#f0f4fd] py-20 lg:py-28">
-      <div className="mx-auto max-w-[1240px] overflow-hidden rounded-[40px] border border-slate-200 bg-white shadow-2xl lg:grid lg:grid-cols-2">
+      <div className="mx-auto overflow-hidden rounded-[40px] border border-slate-200 bg-white shadow-2xl lg:grid lg:grid-cols-2">
         {/* Left: dark map panel */}
         <div className="relative flex flex-col overflow-hidden bg-[#16191f] p-8 lg:p-12">
           <img

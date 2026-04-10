@@ -2,7 +2,6 @@ import { useNavigate } from 'react-router-dom'
 import { scrollToHash } from '../../utils/scrollToHash'
 import logo from '../../assets/logo.png'
 import rippleEffect from '../../assets/Group 237494 (1).png'
-import blackBgFrame from '../../assets/Frame 1000003320.png'
 
 import LocationIcon from '../../assets/Location.svg'
 import MailIcon from '../../assets/Mail.svg'
@@ -30,7 +29,7 @@ export default function LandingFooter({
 }) {
   const navigate = useNavigate()
   return (
-    <footer className="relative bg-white font-sans overflow-hidden">
+    <footer className="relative bg-white font-sans overflow-hidden ">
       {/* Blue CTA Banner Section */}
       <div className="relative z-20 px-4 md:px-8 lg:px-12 -mb-24">
         <div className="mx-auto max-w-[1350px] overflow-hidden rounded-[40px] bg-[#4285F4] shadow-2xl">
@@ -39,10 +38,10 @@ export default function LandingFooter({
             <img 
               src={rippleEffect} 
               alt="" 
-              className="absolute left-1/2 top-[65%] lg:left-auto lg:right-20 lg:top-1/2 -translate-y-1/2 -translate-x-1/2 lg:translate-x-1/4 opacity-100 pointer-events-none block w-full max-w-[400px] sm:max-w-[500px] lg:max-w-[600px] mix-blend-soft-light"
+              className="absolute left-1/2 top-[25%] lg:left-auto lg:right-20 lg:top-1/2 -translate-y-1/2 -translate-x-1/2 lg:translate-x-1/4 opacity-100 pointer-events-none block w-full max-w-[400px] sm:max-w-[500px] lg:max-w-[600px] mix-blend-soft-light"
             />
 
-            <div className="relative z-10">
+            <div className="relative z-10 order-2 lg:order-1">
               <h3 className="font-montserrat text-2xl font-black tracking-wide text-white lg:text-[32px] lg:leading-[1.1]">
                 {ctaTitle}
               </h3>
@@ -65,7 +64,7 @@ export default function LandingFooter({
               </div>
             </div>
 
-            <div className="relative z-10 flex justify-center lg:justify-center">
+            <div className="relative z-10 flex justify-center lg:justify-center order-1 lg:order-2">
               {ctaImage && (
                 <img
                   src={ctaImage}
@@ -79,16 +78,12 @@ export default function LandingFooter({
       </div>
 
       {/* Main Footer (Black Section) */}
-      <div className="relative bg-black pt-48 pb-16 text-white min-h-[500px] rounded-t-[1200px]">
+      <div className="relative bg-black pt-48 pb-16 px-8 text-white min-h-[500px] rounded-t-[100px]">
         {/* Background Frame decoration */}
-        <img 
-          src={blackBgFrame} 
-          alt="" 
-          className="absolute top-0 left-0 w-full h-auto pointer-events-none z-0"
-        />
+        
 
-        <div className="relative z-10 mx-auto max-w-[1450px] px-6 lg:px-8">
-          <div className="grid gap-12 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 pb-16">
+        <div className="relative z-10 mx-auto max-w-[1450px] px-6 lg:px-12">
+          <div className="grid gap-y-16 gap-x-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-6 pb-16">
             {/* Brand Column */}
             <div className="lg:col-span-1">
               <img src={logo} alt="KAV Imports" className="h-16 w-auto" />
@@ -142,8 +137,8 @@ export default function LandingFooter({
             </div>
 
             {/* Locations & Contacts */}
-            <div className="lg:col-span-2">
-              <div className="grid gap-10 sm:grid-cols-2">
+            <div className="sm:col-span-2 md:col-span-3 lg:col-span-2 xl:col-span-2 mt-8 md:mt-0">
+              <div className="grid gap-y-12 gap-x-10 sm:grid-cols-2">
                 {/* NJ Location */}
                 <div className="flex gap-4 order-1">
                   <img src={LocationIcon} alt="" className="h-8 w-8 shrink-0" />
@@ -210,8 +205,8 @@ export default function LandingFooter({
       </div>
 
       {/* Bottom Bar */}
-      <div className="relative z-10 bg-white py-6 border-t border-slate-100">
-        <div className="mx-auto max-w-[1450px] px-4 lg:px-2 flex flex-col items-center justify-between gap-6 md:flex-row">
+      <div className="relative z-10 bg-white py-4 border-t border-slate-100">
+        <div className="mx-auto max-w-[1450px] px-6 lg:px-12 flex flex-col items-center justify-between gap-8 md:flex-row">
           <p className="text-[14px] font-bold tracking-wider text-slate-900 uppercase">
             ©2026 ALL RIGHTS RESERVED
           </p>

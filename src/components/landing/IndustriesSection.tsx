@@ -29,15 +29,15 @@ export default function IndustriesSection({
 }) {
   return (
     <section style={{ background: sectionBg }} className="py-20 lg:py-32">
-      <div className="mx-auto max-w-[1240px] px-4 lg:px-8">
+      <div className="mx-auto px-4 lg:px-8">
         <h2 className="text-center text-3xl font-bold tracking-tight text-slate-900 lg:text-4xl">
           Industries &amp; <span className="text-blue-500">Use Cases</span>
         </h2>
 
-        <div className="mt-16 grid gap-12 lg:grid-cols-2 justify-center items-center">
+        <div className="mt-16 grid gap-4 lg:grid-cols-2 justify-center items-center">
           {/* Image panel */}
           <div
-            className="group relative mx-auto w-full max-w-[500px] overflow-hidden rounded-[32px] border border-blue-400 p-4 z-10 pt-16 transition-shadow hover:shadow-xl sm:p-8"
+            className="group relative mx-auto w-[450px] lg:w-[450px] overflow-hidden rounded-[32px] border border-blue-400 py-4 z-10 pt-16 transition-shadow hover:shadow-xl sm:p-8"
             style={{ 
               backgroundImage: `url("${sectionBgImage}")`, 
               backgroundColor: imageCardBg,
@@ -49,6 +49,9 @@ export default function IndustriesSection({
               <img
                 src={productImage}
                 alt={productImageAlt}
+                width={500}
+                height={400}
+                loading="lazy"
                 className="w-full h-[400px] object-contain drop-shadow-[0_20px_50px_rgba(0,0,0,0.15)] transition-transform duration-500 group-hover:scale-105"
               />
             </div>
@@ -69,7 +72,7 @@ export default function IndustriesSection({
           {/* Use-case cards */}
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
             {useCases.map(({ title, description }) => (
-              <div key={title} className="rounded-2xl bg-white p-7 shadow-sm border border-slate-100 transition-all hover:border-blue-200 hover:shadow-md">
+              <div key={title} className="rounded-2xl bg-white p-4 shadow-sm border border-slate-100 transition-all hover:border-blue-200 hover:shadow-md">
                 <div className="flex flex-col items-center text-center gap-4 sm:flex-row sm:items-start sm:text-left">
                   <RadioDot />
                   <div>

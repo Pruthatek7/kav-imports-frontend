@@ -68,7 +68,7 @@ export default function ProductSizesSection({
 
           {/* Frame image */}
           <div className="flex aspect-square items-center justify-center rounded-[32px]  bg-white shadow-sm">
-            <img src={frameImage} alt={frameImageAlt} className="h-full w-full object-contain" />
+            <img src={frameImage} alt={frameImageAlt} width={500} height={500} loading="lazy" className="h-full w-full object-contain" />
           </div>
 
           {/* Spec card */}
