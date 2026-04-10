@@ -29,7 +29,7 @@ const NAV_LINKS: NavLink[] = [
   { label: 'Testimonials', href: '#testimonials' },
   { label: 'Bulk Order', href: '#contact' },
   { label: 'FAQ', href: '#faqs' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'Contact Us', href: '#contact' },
 ]
 
 const PRODUCT_SIZES: ProductSize[] = [
@@ -97,19 +97,19 @@ export default function PolyMailerBagsPage() {
       <main>
         {/* ── Hero ─────────────────────────────────────────── */}
         <section className="relative overflow-hidden bg-[#eef3fe] py-20 lg:py-20">
-          <div className="mx-auto grid gap-16 items-center lg:grid-cols-2 ">
-            <div className="relative z-10 px-4 lg:px-24">
+          <div className="mx-auto grid gap-12 items-center lg:grid-cols-2">
+            <div className="relative z-10 px-4 lg:px-24 flex flex-col items-center text-center lg:items-start lg:text-left order-2 lg:order-1">
               <span className="inline-block rounded-full border border-blue-200 bg-white/80 px-5 py-2 text-sm font-bold tracking-tight text-blue-600">
                 Ship Smarter. Pack Stronger. Deliver Better.
               </span>
-              <h1 className="mt-8 text-2xl font-black leading-[1.05] tracking-normal text-slate-950 md:text-4xl lg:text-4xl">
-                Premium <span className="text-[#4b86e8]">Poly Mailer</span><br />
+              <h1 className="mt-8 text-3xl font-black leading-[1.05] tracking-normal text-slate-950 md:text-5xl lg:text-4xl">
+                Premium <span className="text-[#4b86e8]">Poly Mailer</span><br className="hidden sm:block" />
                 Bags for Shipping
               </h1>
-              <p className="mt-8 max-w-xl text-lg font-medium leading-relaxed text-slate-600 lg:text-xl">
+              <p className="mt-8 max-w-xl text-lg font-medium leading-relaxed text-slate-600 lg:text-xl mx-auto lg:mx-0">
                 Durable, lightweight, and tamper-proof poly mailers designed for secure packaging. Perfect for eCommerce, retail, and logistics.
               </p>
-              <div className="mt-10 flex flex-wrap items-center gap-4">
+              <div className="mt-10 flex flex-wrap items-center justify-center lg:justify-start gap-4">
                 
                 <a href="#specifications" className="inline-flex h-14 items-center justify-center rounded-full border border-black-200 bg-white px-10 text-base font-bold text-slate-700 transition hover:bg-slate-50 active:scale-95" onClick={(e) => { e.preventDefault(); scrollToHash('#specifications') }}>
                   View Product Sizes
@@ -121,8 +121,8 @@ export default function PolyMailerBagsPage() {
               </div>
             </div>
 
-            <div className="relative mx-auto flex w-full items-end justify-end">
-              <img src={bagImage} alt="Poly mailer bag" className="relative z-10 w-full drop-shadow-[0_45px_100px_rgba(0,0,0,0.18)]" />
+            <div className="relative mx-auto flex w-full items-center justify-center px-0 lg:px-0 order-1 lg:order-2">
+              <img src={bagImage} alt="Poly mailer bag" className="relative z-10 w-full max-w-[500px] lg:max-w-none drop-shadow-[0_45px_100px_rgba(0,0,0,0.18)]" />
             </div>
           </div>
         </section>  
@@ -137,45 +137,59 @@ export default function PolyMailerBagsPage() {
         />
 
         {/* ── Key Features ─────────────────────────────────── */}
-        <section id="features" className="bg-[#E8F1FF] py-8 lg:py-8">
-          <div className="mx-auto grid max-w-[1240px] items-center gap-16 px-4 lg:grid-rows-2 lg:px-8">
-            <div>
-              <h2 className="text-[3.5rem] font-black leading-[0.95] tracking-normal text-slate-900 lg:text-[3rem]">
+        <section id="features" className="bg-[#E8F1FF] py-20 lg:py-28">
+          <div className="mx-auto grid max-w-[1240px] items-center gap-16 px-4 lg:px-8">
+            <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
+              <h2 className="text-4xl font-black leading-[1.05] tracking-tight text-slate-900 sm:text-5xl lg:text-[4rem]">
                 Key Features
               </h2>
               <p className="mt-8 text-lg font-medium leading-relaxed text-slate-500 lg:text-xl">
                 Our premium poly mailer bags protect your shipments while keeping logistics costs low.
               </p>
-              <div className="mt-10 flex flex-wrap items-center gap-4">
-                <a href="#specifications" className="inline-flex h-14 items-center justify-center rounded-full border border-black-200 bg-white px-10 text-base font-bold text-slate-700 transition hover:bg-slate-50 active:scale-95" onClick={(e) => { e.preventDefault(); scrollToHash('#specifications') }}>
+              <div className="mt-10 flex flex-wrap justify-center gap-4 lg:justify-start">
+                <a
+                  href="#specifications"
+                  className="inline-flex h-14 items-center justify-center rounded-full border border-slate-300 bg-white px-10 text-base font-bold text-slate-700 transition hover:bg-slate-50 active:scale-95"
+                  onClick={(e) => {
+                    e.preventDefault()
+                    scrollToHash('#specifications')
+                  }}
+                >
                   View Product Sizes
                 </a>
-                <a href="#contact" className="inline-flex h-14 items-center justify-center rounded-full bg-black px-10 text-base font-bold !text-white shadow-lg transition hover:bg-slate-800 hover:-translate-y-1" onClick={(e) => { e.preventDefault(); scrollToHash('#contact') }}>
+                <a
+                  href="#contact"
+                  className="inline-flex h-14 items-center justify-center rounded-full bg-black px-10 text-base font-bold !text-white shadow-lg transition hover:bg-slate-800 hover:-translate-y-1 active:scale-95"
+                  onClick={(e) => {
+                    e.preventDefault()
+                    scrollToHash('#contact')
+                  }}
+                >
                   Learn More
                 </a>
               </div>
             </div>
     
-          <div className="flex sm:flex-col md:flex-row gap-8 lg:pl-12 lg:flex-row">
-            <div className="relative mx-auto flex w-full max-w-[560px] items-center justify-center">
-              <img src={polyBagsKeyFeaturesImage} alt="Poly mailer bags" className="absolute z-10 drop-shadow-[0_40px_80px_rgba(0,0,0,0.15)]" />
-            </div>
+            <div className="grid gap-12 lg:grid-cols-2 lg:pt-12">
+              <div className="relative mx-auto flex w-full max-w-[500px] items-center justify-center">
+                <img src={polyBagsKeyFeaturesImage} alt="Poly mailer bags" className="relative z-10 w-full drop-shadow-[0_40px_80px_rgba(0,0,0,0.15)]" />
+              </div>
 
-            <div className="flex flex-col gap-8 lg:pl-12 pb-12">
-              {FEATURES.map((feat, i) => (
-                <div key={i} className="flex gap-6">
-                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#4b86e8] text-base font-black text-white shadow-lg shadow-blue-200">
-                    {i + 1}
-                  </span>
-                  <div>
-                    <h3 className="text-lg font-extrabold text-slate-900">{feat.heading}</h3>
-                    <p className="mt-2 text-[15px] font-medium leading-relaxed text-slate-500">
-                      {feat.desc}
-                    </p>
+              <div className="flex flex-col gap-10">
+                {FEATURES.map((feat, i) => (
+                  <div key={i} className="flex flex-col items-center text-center gap-6 sm:flex-row sm:items-start sm:text-left">
+                    <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#4b86e8] text-lg font-black text-white shadow-lg shadow-blue-200">
+                      {i + 1}
+                    </span>
+                    <div>
+                      <h3 className="text-xl font-extrabold text-slate-900">{feat.heading}</h3>
+                      <p className="mt-2 text-[15px] font-medium leading-relaxed text-slate-600">
+                        {feat.desc}
+                      </p>
+                    </div>
                   </div>
-                </div>
-              ))}
-            </div>
+                ))}
+              </div>
             </div>
           </div>
         </section>

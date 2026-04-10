@@ -32,7 +32,7 @@ export default function ProductSizesSection({
   return (
     <section id="specifications" className="border-y border-slate-200 bg-[#f6f7f9] py-16 lg:py-24">
       <div className="mx-auto max-w-[1240px] px-4 lg:px-8">
-        <h2 className="text-center text-2xl font-bold tracking-normal text-slate-900 lg:text-4xl">
+        <h2 className="text-center text-3xl font-bold tracking-normal text-slate-900 lg:text-4xl">
           Product <span className="text-blue-500">Sizes</span>
         </h2>
 

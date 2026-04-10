@@ -8,7 +8,7 @@ export type NavLink = { label: string; href: string }
 export default function LandingHeader({
   links,
   mobileBottomCta = { label: 'Contact Us', href: '#contact' },
-  contactNumber = 'Contact Number',
+  contactNumber = 'New Jersey: (914) 703-2250  |  Texas: (615) 414-5595',
 }: {
   links: NavLink[]
   mobileBottomCta?: { label: string; href: string }

@@ -30,14 +30,14 @@ export default function IndustriesSection({
   return (
     <section style={{ background: sectionBg }} className="py-20 lg:py-32">
       <div className="mx-auto max-w-[1240px] px-4 lg:px-8">
-        <h2 className="text-center text-2xl font-bold tracking-tight text-slate-900 lg:text-4xl">
+        <h2 className="text-center text-3xl font-bold tracking-tight text-slate-900 lg:text-4xl">
           Industries &amp; <span className="text-blue-500">Use Cases</span>
         </h2>
 
-        <div className="mt-16 grid gap-8 lg:grid-cols-2">
+        <div className="mt-16 grid gap-12 lg:grid-cols-2 justify-center items-center">
           {/* Image panel */}
           <div
-            className="group relative overflow-hidden rounded-[32px] border border-blue-400 p-4 w-100 h-100 z-10 pt-16 transition-shadow hover:shadow-xl"
+            className="group relative mx-auto w-full max-w-[500px] overflow-hidden rounded-[32px] border border-blue-400 p-4 z-10 pt-16 transition-shadow hover:shadow-xl sm:p-8"
             style={{ 
               backgroundImage: `url("${sectionBgImage}")`, 
               backgroundColor: imageCardBg,
@@ -49,28 +49,28 @@ export default function IndustriesSection({
               <img
                 src={productImage}
                 alt={productImageAlt}
-                className="w-full h-70 object-contain drop-shadow-[0_20px_50px_rgba(0,0,0,0.15)] transition-transform duration-500 group-hover:scale-105"
+                className="w-full h-[400px] object-contain drop-shadow-[0_20px_50px_rgba(0,0,0,0.15)] transition-transform duration-500 group-hover:scale-105"
               />
             </div>
             
             {/* Absolute Badges */}
-            <div className="absolute right-0 top-5 !z-20">
-              <span className="flex items-center gap-3 rounded-full bg-white px-5 py-2.5 text-sm font-bold shadow-sm">
+            <div className="absolute right-0 top-5 !z-20 sm:right-2">
+              <span className="flex items-center gap-2 rounded-full bg-white px-3 py-2 text-[10px] font-bold shadow-sm sm:gap-3 sm:px-5 sm:py-2.5 sm:text-sm">
                 <RadioDot /> {badge1}
               </span>
             </div>
-            <div className="absolute left-0 bottom-5 z-20">
-              <span className="flex items-center gap-3 rounded-full bg-white px-5 py-2.5 text-sm font-bold shadow-sm">
+            <div className="absolute left-0 bottom-5 z-20 sm:left-2">
+              <span className="flex items-center gap-2 rounded-full bg-white px-3 py-2 text-[10px] font-bold shadow-sm sm:gap-3 sm:px-5 sm:py-2.5 sm:text-sm">
                 <RadioDot /> {badge2}
               </span>
             </div>
           </div>
 
           {/* Use-case cards */}
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:gap-6">
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
             {useCases.map(({ title, description }) => (
               <div key={title} className="rounded-2xl bg-white p-7 shadow-sm border border-slate-100 transition-all hover:border-blue-200 hover:shadow-md">
-                <div className="flex flex-col-2 items-start gap-4">
+                <div className="flex flex-col items-center text-center gap-4 sm:flex-row sm:items-start sm:text-left">
                   <RadioDot />
                   <div>
                     <h3 className="text-[17px] font-bold text-slate-900">{title}</h3>

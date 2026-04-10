@@ -33,11 +33,11 @@ export default function ContactSection({
             aria-hidden
             className="pointer-events-none absolute inset-0 h-full w-full select-none object-cover opacity-80 contrast-125"
           />
-          <h2 className="relative z-10 text-2xl font-bold text-white lg:text-4xl">
+          <h2 className="relative z-10 text-3xl font-bold text-white lg:text-4xl">
             Get In <span className="text-blue-400">Touch</span>
           </h2>
           <div className="relative z-10 mt-10 flex-1">
-            <div className="h-full min-h-[400px]">
+            <div className="h-[350px] lg:h-full lg:min-h-[400px]">
               <GoogleMapEmbed height="100%" className="!rounded-[32px] border-none" />
             </div>
           </div>

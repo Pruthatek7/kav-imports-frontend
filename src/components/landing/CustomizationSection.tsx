@@ -38,17 +38,17 @@ export default function CustomizationSection({
           className="mt-8 grid items-center gap-12 overflow-hidden rounded-[48px] lg:grid-cols-2 p-8 lg:pl-10 lg:py-10"
           style={{ background: panelBg }}
         >
-          <div>
+          <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
             <h3 className="text-3xl font-extrabold leading-tight text-slate-900 lg:text-4xl">{heading}</h3>
             {intro && (
-              <p className="mt-2 text-[17px] font-medium leading-relaxed text-slate-700">{intro}</p>
+              <p className="mt-4 text-[17px] font-medium leading-relaxed text-slate-700">{intro}</p>
             )}
             
-            <ul className="mt-2 space-y-3">
+            <ul className="mt-8 space-y-4 text-left">
               {bulletPoints.map((item) => (
                 <li key={item} className="flex items-center gap-3 text-[15px] font-bold text-slate-800 lg:text-base">
-                  <div className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-blue-500 text-white">
-                    <svg viewBox="0 0 24 24" fill="none" className="h-3 w-3" stroke="currentColor" strokeWidth="4">
+                  <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-blue-500 text-white shadow-sm">
+                    <svg viewBox="0 0 24 24" fill="none" className="h-3.5 w-3.5" stroke="currentColor" strokeWidth="4">
                       <path d="M5 13l4 4L19 7" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                   </div>
@@ -58,12 +58,12 @@ export default function CustomizationSection({
             </ul>
 
             {footerNote && (
-              <p className="mt-2 text-[15px] font-bold text-slate-900">{footerNote}</p>
+              <p className="mt-6 text-[15px] font-bold text-slate-900">{footerNote}</p>
             )}
 
             <a
               href={ctaHref}
-              className="mt-4 inline-flex items-center justify-center rounded-full bg-black px-10 py-4 text-base font-bold !text-white transition hover:-translate-y-1 hover:shadow-xl active:scale-95"
+              className="mt-10 inline-flex items-center justify-center rounded-full bg-black px-12 py-4.5 text-base font-bold !text-white shadow-lg transition hover:-translate-y-1 hover:shadow-xl active:scale-95"
               onClick={(e) => {
                 e.preventDefault()
                 scrollToHash(ctaHref)
