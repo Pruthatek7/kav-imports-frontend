@@ -37,7 +37,7 @@ export default function IndustriesSection({
         <div className="mt-16 grid gap-4 lg:grid-cols-2 justify-center items-center">
           {/* Image panel */}
           <div
-            className="group relative mx-auto w-[450px] lg:w-[450px] overflow-hidden rounded-[32px] border border-blue-400 py-4 z-10 pt-16 transition-shadow hover:shadow-xl sm:p-8"
+            className="group relative mx-auto w-[350px] lg:w-[450px] overflow-hidden rounded-[32px] border border-blue-400 py-4 z-10 pt-16 transition-shadow hover:shadow-xl sm:p-8"
             style={{ 
               backgroundImage: `url("${sectionBgImage}")`, 
               backgroundColor: imageCardBg,
@@ -45,7 +45,7 @@ export default function IndustriesSection({
               backgroundPosition: 'center' 
             }}
           >
-            <div className="relative z-10 mx-auto w-full">
+            <div className="relative z-10 mx-auto w-full ">
               <img
                 src={productImage}
                 alt={productImageAlt}
