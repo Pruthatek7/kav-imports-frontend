@@ -33,7 +33,7 @@ export default function LandingFooter({
       {/* Blue CTA Banner Section */}
       <div className="relative z-20 px-4 md:px-8 lg:px-12 -mb-24">
         <div className="mx-auto max-w-[1350px] overflow-hidden rounded-[40px] bg-[#4285F4] shadow-2xl">
-          <div className="relative grid items-center justify-center gap-2 px-8 py-8 md:px-16 lg:grid-cols-[2fr_1fr] lg:py-4">
+          <div className="relative grid items-center justify-center gap-2 px-6 py-12 md:px-16 lg:grid-cols-[2fr_1fr] lg:py-4">
             {/* Background pattern (Ripple Effect) */}
             <img 
               src={rippleEffect} 
@@ -43,23 +43,23 @@ export default function LandingFooter({
               className="absolute left-1/2 top-[25%] lg:left-auto lg:right-20 lg:top-1/2 -translate-y-1/2 -translate-x-1/2 lg:translate-x-1/4 opacity-100 pointer-events-none block w-full max-w-[400px] sm:max-w-[500px] lg:max-w-[600px] mix-blend-soft-light"
             />
 
-            <div className="relative z-10 order-2 lg:order-1">
-              <h3 className="font-montserrat text-2xl font-black tracking-wide text-white lg:text-[32px] lg:leading-[1.1]">
+            <div className="relative z-10 order-2 lg:order-1 flex flex-col items-center text-center lg:items-start lg:text-left w-full">
+              <h3 className="font-montserrat text-xl sm:text-2xl font-black tracking-wide text-white lg:text-[32px] lg:leading-[1.1]">
                 {ctaTitle}
               </h3>
-              <p className="mt-5 max-w-[500px] text-lg leading-relaxed text-blue-50/90">
+              <p className="mt-5 max-w-[500px] text-base sm:text-lg leading-relaxed text-blue-50/90">
                 {ctaSubtitle}
               </p>
               
-              <div className="mt-10 flex max-w-[480px] items-center rounded-full bg-white p-1.5 shadow-lg">
+              <div className="mt-10 flex w-full max-w-[480px] flex-col sm:flex-row items-center rounded-2xl sm:rounded-full bg-white p-2 sm:p-1.5 shadow-lg">
                 <input
                   type="email"
-                  className="flex-1 bg-transparent px-6 text-[15px] font-medium text-slate-900 outline-none placeholder:text-slate-400"
+                  className="w-full sm:flex-1 bg-transparent px-6 py-3.5 sm:py-0 text-[15px] font-medium text-slate-900 outline-none placeholder:text-slate-400 min-w-0"
                   placeholder="Enter your email address..."
                 />
                 <button
                   type="button"
-                  className="rounded-full bg-black px-10 py-3.5 text-[15px] font-bold text-white transition hover:bg-slate-800 active:scale-95 cursor-pointer"
+                  className="w-full sm:w-auto rounded-xl sm:rounded-full bg-black px-10 py-3.5 text-[15px] font-bold text-white transition hover:bg-slate-800 active:scale-95 cursor-pointer"
                 >
                   Contact
                 </button>
@@ -87,9 +87,9 @@ export default function LandingFooter({
         <div className="relative z-10 mx-auto max-w-[1450px] px-6 lg:px-12">
           <div className="grid gap-y-16 gap-x-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-6 pb-16">
             {/* Brand Column */}
-            <div className="lg:col-span-1">
+            <div className="lg:col-span-1 flex flex-col items-center text-center lg:items-start lg:text-left">
               <img src={logo} alt="KAV Imports" width={83} height={100} className="h-16 w-auto" />
-              <div className="mt-6 border-t border-white/10 pt-6">
+              <div className="mt-6 border-t border-white/10 pt-6 w-full">
                 <p className="text-[13px] leading-relaxed text-slate-400">
                   Providing high-quality, durable, and eco-conscious packaging solutions for businesses of all sizes. Trusted by Industries nationwide.
                 </p>
