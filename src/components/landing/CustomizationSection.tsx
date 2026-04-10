@@ -35,7 +35,7 @@ export default function CustomizationSection({
         </h2>
 
         <div
-          className="mt-8 grid items-center gap-12 overflow-hidden rounded-[48px] lg:grid-cols-2 lg:pl-10 lg:py-10"
+          className="mt-8 grid items-center gap-12 overflow-hidden rounded-[48px] lg:grid-cols-2 p-8 lg:pl-10 lg:py-10"
           style={{ background: panelBg }}
         >
           <div>
