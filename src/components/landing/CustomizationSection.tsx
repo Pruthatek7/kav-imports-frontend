@@ -9,7 +9,7 @@ export default function CustomizationSection({
   intro,
   bulletPoints,
   footerNote,
-  panelBg = '#bfd2f4',
+  panelBg = '#B0CDFF',
   productImage,
   productImageAlt = 'Custom product',
   ctaHref = '#contact',
@@ -29,26 +29,26 @@ export default function CustomizationSection({
 }) {
   return (
     <section id="customization" className="bg-white py-20 lg:py-28">
-      <div className="mx-auto max-w-[1240px] px-4 lg:px-4">
+      <div className="mx-auto px-4 lg:px-24">
         <h2 className="text-center text-3xl font-extrabold tracking-tight text-slate-900 lg:text-4xl">
           Customization <span className="text-blue-500">Options</span>
         </h2>
 
         <div
-          className="mt-8 grid items-center gap-12 overflow-hidden rounded-[48px] p-3 lg:grid-cols-2 lg:p-12"
+          className="mt-8 grid items-center gap-12 overflow-hidden rounded-[48px] md:grid-cols-2 lg:grid-cols-2 p-8 lg:pl-10 lg:py-8 lg:p-0"
           style={{ background: panelBg }}
         >
-          <div>
+          <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
             <h3 className="text-3xl font-extrabold leading-tight text-slate-900 lg:text-4xl">{heading}</h3>
             {intro && (
-              <p className="mt-6 text-[17px] font-medium leading-relaxed text-slate-700">{intro}</p>
+              <p className="mt-4 text-[17px] font-medium leading-relaxed text-slate-700">{intro}</p>
             )}
             
-            <ul className="mt-8 space-y-3">
+            <ul className="mt-8 space-y-4 text-left">
               {bulletPoints.map((item) => (
                 <li key={item} className="flex items-center gap-3 text-[15px] font-bold text-slate-800 lg:text-base">
-                  <div className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-blue-500 text-white">
-                    <svg viewBox="0 0 24 24" fill="none" className="h-3 w-3" stroke="currentColor" strokeWidth="4">
+                  <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-blue-500 text-white shadow-sm">
+                    <svg viewBox="0 0 24 24" fill="none" className="h-3.5 w-3.5" stroke="currentColor" strokeWidth="4">
                       <path d="M5 13l4 4L19 7" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                   </div>
@@ -58,12 +58,12 @@ export default function CustomizationSection({
             </ul>
 
             {footerNote && (
-              <p className="mt-8 text-[15px] font-bold text-slate-900">{footerNote}</p>
+              <p className="mt-6 text-[15px] font-bold text-slate-900">{footerNote}</p>
             )}
 
             <a
               href={ctaHref}
-              className="mt-10 inline-flex items-center justify-center rounded-full bg-black px-10 py-4 text-base font-bold !text-white transition hover:-translate-y-1 hover:shadow-xl active:scale-95"
+              className="mt-10 inline-flex items-center justify-center rounded-full bg-black px-12 py-4.5 text-base font-bold !text-white shadow-lg transition hover:-translate-y-1 hover:shadow-xl active:scale-95"
               onClick={(e) => {
                 e.preventDefault()
                 scrollToHash(ctaHref)
@@ -74,11 +74,14 @@ export default function CustomizationSection({
           </div>
 
           <div className="relative">
-            <div className="absolute inset-0 m-auto h-[80%] w-[80%] rounded-full bg-white/20 blur-3xl" />
+            <div className="absolute inset-0 m-auto h-[100%] w-[100%] rounded-full bg-white/20 blur-3xl" />
             <img
               src={productImage}
               alt={productImageAlt}
-              className="relative z-10 mx-auto w-full max-w-[440px] drop-shadow-[0_30px_60px_rgba(0,0,0,0.15)] transition-transform duration-500 hover:scale-105"
+              width={600}
+              height={600}
+              loading="lazy"
+              className="relative z-10 mx-auto w-full drop-shadow-[0_30px_60px_rgba(0,0,0,0.15)] transition-transform duration-500 hover:scale-105"
             />
           </div>
         </div>

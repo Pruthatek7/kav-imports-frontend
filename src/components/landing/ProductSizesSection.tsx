@@ -32,13 +32,13 @@ export default function ProductSizesSection({
   return (
     <section id="specifications" className="border-y border-slate-200 bg-[#f6f7f9] py-16 lg:py-24">
       <div className="mx-auto max-w-[1240px] px-4 lg:px-8">
-        <h2 className="text-center text-md font-bold tracking-normal text-slate-900 lg:text-4xl">
+        <h2 className="text-center text-3xl font-bold tracking-normal text-slate-900 lg:text-4xl">
           Product <span className="text-blue-500">Sizes</span>
         </h2>
 
         <div className="mt-16 grid items-start gap-8 lg:grid-cols-[240px_1fr_400px] justify-center items-center">
           {/* Size selector */}
-          <div className="flex flex-row flex-wrap gap-4 lg:flex-col">
+          <div className="flex flex-row flex-wrap gap-4  justify-center lg:flex-col">
             {sizes.map((size) => (
               <button
                 key={size.id}
@@ -68,7 +68,7 @@ export default function ProductSizesSection({
 
           {/* Frame image */}
           <div className="flex aspect-square items-center justify-center rounded-[32px]  bg-white shadow-sm">
-            <img src={frameImage} alt={frameImageAlt} className="h-full w-full object-contain" />
+            <img src={frameImage} alt={frameImageAlt} width={500} height={500} loading="lazy" className="h-full w-full object-contain" />
           </div>
 
           {/* Spec card */}

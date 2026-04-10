@@ -24,7 +24,7 @@ export default function ContactSection({
 
   return (
     <section id="contact" className="bg-[#f0f4fd] py-20 lg:py-28">
-      <div className="mx-auto max-w-[1240px] overflow-hidden rounded-[40px] border border-slate-200 bg-white shadow-2xl lg:grid lg:grid-cols-2">
+      <div className="mx-auto overflow-hidden rounded-[40px] border border-slate-200 bg-white shadow-2xl lg:grid lg:grid-cols-2">
         {/* Left: dark map panel */}
         <div className="relative flex flex-col overflow-hidden bg-[#16191f] p-8 lg:p-12">
           <img
@@ -33,11 +33,11 @@ export default function ContactSection({
             aria-hidden
             className="pointer-events-none absolute inset-0 h-full w-full select-none object-cover opacity-80 contrast-125"
           />
-          <h2 className="relative z-10 text-2xl font-bold text-white lg:text-4xl">
+          <h2 className="relative z-10 text-3xl font-bold text-white lg:text-4xl">
             Get In <span className="text-blue-400">Touch</span>
           </h2>
           <div className="relative z-10 mt-10 flex-1">
-            <div className="h-full min-h-[400px]">
+            <div className="h-[350px] lg:h-full lg:min-h-[400px]">
               <GoogleMapEmbed height="100%" className="!rounded-[32px] border-none" />
             </div>
           </div>

@@ -27,7 +27,7 @@ export default function TestimonialsSection({
 }) {
   return (
     <section id="testimonials" className="bg-white pb-20 pt-10 lg:pb-32 lg:pt-16">
-      <div className="mx-auto max-w-[1240px] px-4 lg:px-8">
+      <div className="mx-auto max-w-[1240px] px-8 lg:px-8">
         <h2 className="text-center text-3xl font-bold tracking-normal text-slate-900 lg:text-4xl">
           Customer <span className="text-blue-500">Testimonials</span>
         </h2>
@@ -43,6 +43,9 @@ export default function TestimonialsSection({
             <img
                 src={productImage}
                 alt={productImageAlt}
+                width={600}
+                height={600}
+                loading="lazy"
                 className="relative z-10 w-[75%] drop-shadow-[0_25px_40px_rgba(0,0,0,0.12)]"
               />
 
