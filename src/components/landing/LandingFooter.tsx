@@ -38,6 +38,8 @@ export default function LandingFooter({
             <img 
               src={rippleEffect} 
               alt="" 
+              width={775}
+              height={775}
               className="absolute left-1/2 top-[25%] lg:left-auto lg:right-20 lg:top-1/2 -translate-y-1/2 -translate-x-1/2 lg:translate-x-1/4 opacity-100 pointer-events-none block w-full max-w-[400px] sm:max-w-[500px] lg:max-w-[600px] mix-blend-soft-light"
             />
 
@@ -86,7 +88,7 @@ export default function LandingFooter({
           <div className="grid gap-y-16 gap-x-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-6 pb-16">
             {/* Brand Column */}
             <div className="lg:col-span-1">
-              <img src={logo} alt="KAV Imports" className="h-16 w-auto" />
+              <img src={logo} alt="KAV Imports" width={83} height={100} className="h-16 w-auto" />
               <div className="mt-6 border-t border-white/10 pt-6">
                 <p className="text-[13px] leading-relaxed text-slate-400">
                   Providing high-quality, durable, and eco-conscious packaging solutions for businesses of all sizes. Trusted by Industries nationwide.

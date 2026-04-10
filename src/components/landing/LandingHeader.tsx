@@ -62,14 +62,14 @@ export default function LandingHeader({
             className="flex items-center gap-3"
             onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }) }}
           >
-            <img src={logo} alt="KAV Imports" width={180} height={64} className="h-12 w-auto lg:h-16" />
+            <img src={logo} alt="KAV Imports" width={83} height={100} className="h-12 w-auto lg:h-16" />
           </a>
 
           {/* Desktop nav */}
           <nav className="flex items-center gap-8" aria-label="Primary">
             {links.map((l) => (
               <a
-                key={l.href}
+                key={l.label + l.href}
                 href={l.href}
                 className="text-[15px] font-semibold text-slate-800 transition hover:text-blue-600"
                 onClick={(e) => { e.preventDefault(); scrollToHash(l.href) }}
@@ -103,7 +103,7 @@ export default function LandingHeader({
               href="#"
               onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }) }}
             >
-              <img src={logo} alt="KAV Imports" width={120} height={48} className="h-12 w-auto" />
+              <img src={logo} alt="KAV Imports" width={83} height={100} className="h-12 w-auto" />
             </a>
           </div>
 
