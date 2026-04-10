@@ -27,7 +27,8 @@ export default function LandingHeader({
     <>
       {/* Top bar */}
       <div className="bg-black py-2.5 text-white">
-        <div className="mx-auto flex max-w-[1240px] items-center justify-between px-4 text-[13px] font-medium lg:px-8">
+        {/* Desktop Top Bar */}
+        <div className="mx-auto hidden max-w-[1240px] items-center justify-between px-4 text-[13px] font-medium lg:flex lg:px-8">
           <span className='font-montserrat'>{contactNumber}</span>
           <div className="flex items-center gap-2.5">
             <a href="#" aria-label="LinkedIn" className="grid h-9 w-9 place-items-center rounded-full bg-white/15 text-[15px] font-bold transition hover:bg-blue-500">in</a>
@@ -35,55 +36,82 @@ export default function LandingHeader({
             <a href="#" aria-label="Twitter" className="grid h-9 w-9 place-items-center rounded-full bg-white/15 text-[15px] font-bold transition hover:bg-blue-500">𝕏</a>
           </div>
         </div>
+        {/* Mobile Top Bar */}
+        <div className="flex items-center justify-center gap-4 lg:hidden">
+          <a href="#" aria-label="LinkedIn" className="grid h-8 w-8 place-items-center rounded-full bg-white/15 text-[13px] font-bold transition hover:bg-blue-500">in</a>
+          <a href="#" aria-label="Facebook" className="grid h-8 w-8 place-items-center rounded-full bg-white/15 text-[13px] font-bold transition hover:bg-blue-500">f</a>
+          <a href="#" aria-label="Twitter" className="grid h-8 w-8 place-items-center rounded-full bg-white/15 text-[13px] font-bold transition hover:bg-blue-500">𝕏</a>
+        </div>
       </div>
 
       {/* Main sticky nav */}
       <header className="sticky top-0 z-50 border-b border-slate-100 bg-white/95 shadow-sm backdrop-blur-md">
-        <div className="mx-auto flex h-20 max-w-[1400px] items-center justify-between px-2 lg:px-2">
+        {/* Desktop Header */}
+        <div className="mx-auto hidden h-24 max-w-[1400px] items-center justify-between px-8 lg:flex">
           {/* Logo */}
           <a
             href="#"
             className="flex items-center gap-3"
             onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }) }}
           >
-            <img src={logo} alt="KAV Imports" className="h-15 w-auto" />
+            <img src={logo} alt="KAV Imports" className="h-12 w-auto lg:h-16" />
           </a>
 
           {/* Desktop nav */}
-          <nav className="hidden items-center gap-8 lg:flex" aria-label="Primary">
+          <nav className="flex items-center gap-8" aria-label="Primary">
             {links.map((l) => (
               <a
                 key={l.href}
                 href={l.href}
-                className="text-base font-semibold text-slate-800 transition hover:text-blue-600"
+                className="text-[15px] font-semibold text-slate-800 transition hover:text-blue-600"
                 onClick={(e) => { e.preventDefault(); scrollToHash(l.href) }}
               >
                 {l.label}
               </a>
             ))}
           </nav>
+        </div>
 
-          {/* Desktop CTA */}
-          {/* <a
-            href={mobileBottomCta.href}
-            className="hidden rounded-full bg-blue-500 px-5 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-blue-600 lg:inline-flex"
-            onClick={(e) => { e.preventDefault(); scrollToHash(mobileBottomCta.href) }}
-          >
-            {mobileBottomCta.label}
-          </a> */}
+        {/* Mobile Header */}
+        <div className="grid h-20 w-full grid-cols-3 items-center px-4 lg:hidden">
+          {/* Left: Hamburger */}
+          <div className="flex justify-start">
+            <button
+              type="button"
+              aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+              aria-expanded={menuOpen}
+              className="text-[#1B2B48] transition"
+              onClick={() => setMenuOpen((v) => !v)}
+            >
+              <svg viewBox="0 0 24 24" className="h-8 w-8" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+                <path d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </button>
+          </div>
 
-          {/* Hamburger */}
-          <button
-            type="button"
-            aria-label={menuOpen ? 'Close menu' : 'Open menu'}
-            aria-expanded={menuOpen}
-            className="grid h-10 w-10 place-items-center rounded-xl border border-slate-200 text-slate-700 transition hover:bg-slate-50 lg:hidden"
-            onClick={() => setMenuOpen((v) => !v)}
-          >
-            <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" aria-hidden>
-              <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-            </svg>
-          </button>
+          {/* Center: Logo */}
+          <div className="flex justify-center">
+            <a
+              href="#"
+              onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }) }}
+            >
+              <img src={logo} alt="KAV Imports" className="h-12 w-auto" />
+            </a>
+          </div>
+
+          {/* Right: Search */}
+          <div className="flex justify-end">
+            <button
+              type="button"
+              aria-label="Search"
+              className="grid h-10 w-10 place-items-center rounded-full bg-[#4285F4] text-white shadow-md transition hover:bg-blue-600"
+            >
+              <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <circle cx="11" cy="11" r="8" />
+                <path d="m21 21-4.3-4.3" />
+              </svg>
+            </button>
+          </div>
         </div>
       </header>
 
@@ -103,23 +131,29 @@ export default function LandingHeader({
             </button>
 
             <nav className="mt-8 flex-1">
-              {[{ label: 'Home', href: '#top' }, ...links].filter((l)=> l.href !== '#contact').map((l, idx, arr) => (
-                <a
-                  key={l.href}
-                  href={l.href}
-                  className={`flex items-center justify-between py-4 text-xl font-semibold !text-white ${idx < arr.length - 1 ? 'border-b border-white/10' : ''}`}
-                  onClick={(e) => {
-                    e.preventDefault()
-                    setMenuOpen(false)
-                    l.href === '#top'
-                      ? window.scrollTo({ top: 0, behavior: 'smooth' })
-                      : scrollToHash(l.href)
-                  }}
-                >
-                  {l.label}
-                  <span className="text-white/40" aria-hidden>→</span>
-                </a>
-              ))}
+              {(() => {
+                const hasHome = links.some((l) => l.label.toLowerCase() === 'home')
+                const allLinks = hasHome ? links : [{ label: 'Home', href: '#top' }, ...links]
+                return allLinks
+                  .filter((l) => l.label !== mobileBottomCta.label)
+                  .map((l, idx, arr) => (
+                    <a
+                      key={l.label + idx}
+                      href={l.href}
+                      className={`flex items-center justify-between py-4 text-xl font-semibold !text-white ${idx < arr.length - 1 ? 'border-b border-white/10' : ''}`}
+                      onClick={(e) => {
+                        e.preventDefault()
+                        setMenuOpen(false)
+                        l.href === '#top' ? window.scrollTo({ top: 0, behavior: 'smooth' }) : scrollToHash(l.href)
+                      }}
+                    >
+                      {l.label}
+                      <span className="text-white/40" aria-hidden>
+                        →
+                      </span>
+                    </a>
+                  ))
+              })()}
             </nav>
 
             <a

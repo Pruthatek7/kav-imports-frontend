@@ -127,8 +127,8 @@ export default function CommercialGarbageBagsPage() {
               <p className="mt-8 max-w-xl text-lg font-small leading-relaxed text-slate-600 lg:text-md">
                 Durable HDPE &amp; LLDPE trash can liners designed for commercial waste management, industrial use, and large-scale operations.
               </p>
-              <div className="mt-10 flex flex-wrap items-center gap-4">
-                <a href="#specifications" className="inline-flex h-10 items-center justify-center rounded-full border border-black-200 bg-white px-8 text-base text-slate-700 transition hover:bg-slate-50 active:scale-95" onClick={(e) => { e.preventDefault(); scrollToHash('#specifications') }}>
+              <div className="mt-10 flex flex-wrap items-center gap-4 lg:justify-start justify-center">
+                <a href="#specifications" className="inline-flex h-10 items-center justify-center rounded-full border border-black-200 bg-white px-4 lg:px-8 text-base text-slate-700 transition hover:bg-slate-50 active:scale-95" onClick={(e) => { e.preventDefault(); scrollToHash('#specifications') }}>
                   View Product Sizes
                 </a>
                 <a href="#contact" className="inline-flex h-10 items-center justify-center rounded-full bg-black px-8 text-base  !text-white shadow-lg transition hover:bg-slate-800 hover:-translate-y-1" onClick={(e) => { e.preventDefault(); scrollToHash('#contact') }}>
