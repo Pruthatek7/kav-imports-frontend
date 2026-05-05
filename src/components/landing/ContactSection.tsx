@@ -1,15 +1,15 @@
-import { useState } from 'react'
-import axios from 'axios'
-import GoogleMapEmbed from './GoogleMapEmbed'
-import { scrollToHash } from '../../utils/scrollToHash'
-import contactPattern from '../../assets/Group 1410136860.png'
+import { useState } from 'react';
+import axios from 'axios';
+import GoogleMapEmbed from './GoogleMapEmbed';
+import { scrollToHash } from '../../utils/scrollToHash';
+import contactPattern from '../../assets/Group 1410136860.png';
 
 const FORM_FIELDS = [
   { label: 'Name', key: 'name', type: 'text' },
   { label: 'Email Address', key: 'email', type: 'email' },
   { label: 'Phone Number', key: 'phoneNumber', type: 'tel' },
   { label: 'Required Quantity', key: 'requiredQuantity', type: 'number' },
-] as const
+] as const;
 
 /**
  * Dark "Get In Touch" + request form section shared by both landing pages.
@@ -20,10 +20,10 @@ export default function ContactSection({
   subtitle,
   productLabel = 'garbage bags',
 }: {
-  heading?: string
-  headingHighlight?: string
-  subtitle?: string
-  productLabel?: string
+  heading?: string;
+  headingHighlight?: string;
+  subtitle?: string;
+  productLabel?: string;
 }) {
   const [formData, setFormData] = useState({
     name: '',
@@ -31,49 +31,60 @@ export default function ContactSection({
     phoneNumber: '',
     requiredQuantity: '',
     message: '',
-  })
-  const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle')
-  const [statusMessage, setStatusMessage] = useState('')
+  });
+  const [status, setStatus] = useState<
+    'idle' | 'submitting' | 'success' | 'error'
+  >('idle');
+  const [statusMessage, setStatusMessage] = useState('');
 
   const resolvedSubtitle =
     subtitle ??
-    `Interested in our ${productLabel}? Get in touch with our team for product details, pricing, and custom orders.`
+    `Interested in our ${productLabel}? Get in touch with our team for product details, pricing, and custom orders.`;
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target
-    setFormData((prev) => ({ ...prev, [name]: value }))
-  }
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setStatus('submitting')
-    setStatusMessage('')
+    e.preventDefault();
+    setStatus('submitting');
+    setStatusMessage('');
 
     try {
-      const apiUrl = import.meta.env.VITE_API_URL
-      const response = await axios.post(`${apiUrl}/contacts`, formData)
+      const apiUrl =
+        import.meta.env.VITE_APP_ENV === 'development'
+          ? import.meta.env.VITE_DEV_API_URL
+          : import.meta.env.VITE_API_URL;
+      const response = await axios.post(`${apiUrl}/contacts`, formData);
 
       if (response.data.success) {
-        setStatus('success')
-        setStatusMessage('Your inquiry has been sent successfully! We will get back to you soon.')
+        setStatus('success');
+        setStatusMessage(
+          'Your inquiry has been sent successfully! We will get back to you soon.',
+        );
         setFormData({
           name: '',
           email: '',
           phoneNumber: '',
           requiredQuantity: '',
           message: '',
-        })
+        });
       } else {
-        throw new Error(response.data.message || 'Something went wrong')
+        throw new Error(response.data.message || 'Something went wrong');
       }
     } catch (error: any) {
-      console.error('Submission error:', error)
-      setStatus('error')
+      console.error('Submission error:', error);
+      setStatus('error');
       setStatusMessage(
-        error.response?.data?.message || error.message || 'Failed to send inquiry. Please try again later.'
-      )
+        error.response?.data?.message ||
+          error.message ||
+          'Failed to send inquiry. Please try again later.',
+      );
     }
-  }
+  };
 
   return (
     <section id="contact" className="bg-[#f0f4fd] py-20 lg:py-28">
@@ -92,7 +103,10 @@ export default function ContactSection({
             </h2>
             <div className="relative z-10 mt-10 flex-1">
               <div className="h-[350px] lg:h-full lg:min-h-[400px]">
-                <GoogleMapEmbed height="100%" className="!rounded-[32px] border-none" />
+                <GoogleMapEmbed
+                  height="100%"
+                  className="!rounded-[32px] border-none"
+                />
               </div>
             </div>
           </div>
@@ -103,13 +117,17 @@ export default function ContactSection({
               {heading}{' '}
               <span className="text-blue-500">{headingHighlight}</span>
             </h2>
-            <p className="mt-5 text-[17px] font-medium leading-relaxed text-slate-500">{resolvedSubtitle}</p>
+            <p className="mt-5 text-[17px] font-medium leading-relaxed text-slate-500">
+              {resolvedSubtitle}
+            </p>
 
             <form onSubmit={handleSubmit} className="mt-10 space-y-5">
               <div className="grid gap-5 sm:grid-cols-2">
                 {FORM_FIELDS.slice(0, 2).map((field) => (
                   <label key={field.key} className="block">
-                    <span className="mb-2 block text-sm font-bold text-slate-800">{field.label}</span>
+                    <span className="mb-2 block text-sm font-bold text-slate-800">
+                      {field.label}
+                    </span>
                     <input
                       required
                       name={field.key}
@@ -122,11 +140,13 @@ export default function ContactSection({
                   </label>
                 ))}
               </div>
-              
+
               <div className="grid gap-5 sm:grid-cols-2">
                 {FORM_FIELDS.slice(2).map((field) => (
                   <label key={field.key} className="block">
-                    <span className="mb-2 block text-sm font-bold text-slate-800">{field.label}</span>
+                    <span className="mb-2 block text-sm font-bold text-slate-800">
+                      {field.label}
+                    </span>
                     <input
                       required
                       name={field.key}
@@ -141,7 +161,9 @@ export default function ContactSection({
               </div>
 
               <label className="block">
-                <span className="mb-2 block text-sm font-bold text-slate-800">Message</span>
+                <span className="mb-2 block text-sm font-bold text-slate-800">
+                  Message
+                </span>
                 <textarea
                   required
                   name="message"
@@ -154,9 +176,13 @@ export default function ContactSection({
               </label>
 
               {statusMessage && (
-                <div className={`rounded-xl p-4 text-sm font-medium ${
-                  status === 'success' ? 'bg-green-50 text-green-700' : 'bg-red-50 text-red-700'
-                }`}>
+                <div
+                  className={`rounded-xl p-4 text-sm font-medium ${
+                    status === 'success'
+                      ? 'bg-green-50 text-green-700'
+                      : 'bg-red-50 text-red-700'
+                  }`}
+                >
                   {statusMessage}
                 </div>
               )}
@@ -166,8 +192,8 @@ export default function ContactSection({
                   href="#specifications"
                   className="flex items-center gap-2 rounded-full border border-blue-400 bg-white px-5 py-2 text-[15px] !text-blue-400 transition hover:bg-slate-50 active:scale-95"
                   onClick={(e) => {
-                    e.preventDefault()
-                    scrollToHash('#specifications')
+                    e.preventDefault();
+                    scrollToHash('#specifications');
                   }}
                 >
                   View Product Sizes
@@ -176,7 +202,9 @@ export default function ContactSection({
                   type="submit"
                   disabled={status === 'submitting'}
                   className={`flex-1 rounded-full px-2 py-2 text-base text-white shadow-lg transition active:scale-95 cursor-pointer flex items-center justify-center gap-2 ${
-                    status === 'submitting' ? 'bg-slate-400 cursor-not-allowed' : 'bg-black hover:bg-blue-600 hover:-translate-y-1'
+                    status === 'submitting'
+                      ? 'bg-slate-400 cursor-not-allowed'
+                      : 'bg-black hover:bg-blue-600 hover:-translate-y-1'
                   }`}
                 >
                   {status === 'submitting' ? (
@@ -188,12 +216,11 @@ export default function ContactSection({
                     'Submit Business Inquiry'
                   )}
                 </button>
-                
               </div>
             </form>
           </div>
         </div>
       </div>
     </section>
-  )
+  );
 }
