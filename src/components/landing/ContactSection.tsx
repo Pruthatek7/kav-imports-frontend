@@ -44,7 +44,33 @@ export default function ContactSection({
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
-    const { name, value } = e.target;
+    let { name, value } = e.target;
+
+    if (name === 'phoneNumber') {
+      // Remove all non-digits
+      const cleaned = value.replace(/\D/g, '');
+      // Limit to 10 digits (US standard 10 digits + 1 for country code handled visually)
+      const truncated = cleaned.slice(0, 10);
+
+      // Format: (XXX) XXX-XXXX
+      let formatted = truncated;
+      if (truncated.length > 0) {
+        if (truncated.length <= 3) {
+          formatted = `(${truncated}`;
+        } else if (truncated.length <= 6) {
+          formatted = `(${truncated.slice(0, 3)}) ${truncated.slice(3)}`;
+        } else {
+          formatted = `(${truncated.slice(0, 3)}) ${truncated.slice(3, 6)}-${truncated.slice(6, 10)}`;
+        }
+      }
+      value = formatted;
+    }
+
+    if (name === 'requiredQuantity') {
+      // Prevent non-digits and limit to 10 digits
+      value = value.replace(/\D/g, '').slice(0, 10);
+    }
+
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
@@ -142,22 +168,45 @@ export default function ContactSection({
               </div>
 
               <div className="grid gap-5 sm:grid-cols-2">
-                {FORM_FIELDS.slice(2).map((field) => (
-                  <label key={field.key} className="block">
-                    <span className="mb-2 block text-sm font-bold text-slate-800">
-                      {field.label}
-                    </span>
+                {/* Phone Number Field with US Flag and Prefix */}
+                <label className="block">
+                  <span className="mb-2 block text-sm font-bold text-slate-800">
+                    Phone Number
+                  </span>
+                  <div className="relative flex items-center">
+                    <div className="absolute left-5 flex items-center gap-1.5 border-r border-slate-200 pr-3 text-[15px] font-bold text-slate-900">
+                      <span className="text-lg">🇺🇸</span>
+                      <span>+1</span>
+                    </div>
                     <input
                       required
-                      name={field.key}
-                      type={field.type}
-                      value={formData[field.key as keyof typeof formData]}
+                      name="phoneNumber"
+                      type="tel"
+                      value={formData.phoneNumber}
                       onChange={handleChange}
-                      placeholder={`Enter your ${field.label.toLowerCase()}`}
-                      className="h-14 w-full rounded-full border border-slate-200 bg-slate-50 px-6 text-[15px] font-medium text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-blue-400 focus:bg-white focus:ring-4 focus:ring-blue-100"
+                      placeholder="(XXX) XXX-XXXX"
+                      maxLength={15}
+                      className="h-14 w-full rounded-full border border-slate-200 bg-slate-50 pl-24 pr-6 text-[15px] font-medium text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-blue-400 focus:bg-white focus:ring-4 focus:ring-blue-100"
                     />
-                  </label>
-                ))}
+                  </div>
+                </label>
+
+                {/* Required Quantity Field */}
+                <label className="block">
+                  <span className="mb-2 block text-sm font-bold text-slate-800">
+                    Required Quantity
+                  </span>
+                  <input
+                    required
+                    name="requiredQuantity"
+                    type="text"
+                    inputMode="numeric"
+                    value={formData.requiredQuantity}
+                    onChange={handleChange}
+                    placeholder="Enter quantity"
+                    className="h-14 w-full rounded-full border border-slate-200 bg-slate-50 px-6 text-[15px] font-medium text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-blue-400 focus:bg-white focus:ring-4 focus:ring-blue-100"
+                  />
+                </label>
               </div>
 
               <label className="block">
