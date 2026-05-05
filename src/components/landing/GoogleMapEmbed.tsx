@@ -3,15 +3,15 @@
  * Uses the free maps.google.com embed URL.
  */
 export default function GoogleMapEmbed({
-  query = '1435 51st St North Bergen, NJ 07047 USA',
+  query = '620 Ramsey Ave Hillside, NJ-07205',
   height = 520,
   className = '',
 }: {
-  query?: string
-  height?: number | string
-  className?: string
+  query?: string;
+  height?: number | string;
+  className?: string;
 }) {
-  const src = `https://maps.google.com/maps?width=600&height=400&hl=en&q=${encodeURIComponent(query)}&t=&z=14&ie=UTF8&iwloc=B&output=embed`
+  const src = `https://maps.google.com/maps?width=600&height=400&hl=en&q=${encodeURIComponent(query)}&t=&z=14&ie=UTF8&iwloc=B&output=embed`;
 
   return (
     <div
@@ -34,5 +34,5 @@ export default function GoogleMapEmbed({
         <p className="text-xs text-slate-500">North Bergen, NJ</p>
       </div>
     </div>
-  )
+  );
 }
