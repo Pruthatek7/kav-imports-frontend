@@ -11,7 +11,6 @@ import CallingIcon from '../../assets/Calling.svg';
 const QUICK_LINKS = [
   'Home',
   'Products',
-  'Industries',
   'Customization',
   'Bulk Orders',
   'About Us',
@@ -20,9 +19,16 @@ const QUICK_LINKS = [
 const PRODUCTS = [
   'Garbage Bags',
   'Poly Mailer Bags',
-  'Custom Printed Bags',
-  'Heavy-Duty Waste Bags',
-  'Eco-Friendly Packaging',
+  'Wicket Bags',
+  'Ice Bags',
+  'Product Rolls',
+  'Poly bags',
+  'Paper Bags',
+  'Foil Container',
+  'Thermal Paper Rolls',
+  'Tshirt Bags',
+  'Foil Pop Up Sheets & Roll Sheets',
+  'Plastic Reusable Bags',
 ];
 const SUPPORT = [
   'FAQs',
@@ -65,7 +71,7 @@ export default function LandingFooter({
                 {ctaSubtitle}
               </p>
 
-              <div className="mt-10 flex w-full max-w-[480px] flex-col sm:flex-row items-center rounded-2xl sm:rounded-full bg-white p-2 sm:p-1.5 shadow-lg">
+              {/* <div className="mt-10 flex w-full max-w-[480px] flex-col sm:flex-row items-center rounded-2xl sm:rounded-full bg-white p-2 sm:p-1.5 shadow-lg">
                 <input
                   type="email"
                   className="w-full sm:flex-1 bg-transparent px-6 py-3.5 sm:py-0 text-[15px] font-medium text-slate-900 outline-none placeholder:text-slate-400 min-w-0"
@@ -76,6 +82,17 @@ export default function LandingFooter({
                   className="w-full sm:w-auto rounded-xl sm:rounded-full bg-black px-10 py-3.5 text-[15px] font-bold text-white transition hover:bg-slate-800 active:scale-95 cursor-pointer"
                 >
                   Contact
+                </button>
+              </div> */}
+              <div className="mt-10">
+                <button
+                  type="button"
+                  onClick={() => {
+                    scrollToHash('#contact');
+                  }}
+                  className="w-full sm:w-auto rounded-xl sm:rounded-full bg-black px-10 py-3.5 text-[15px] font-bold text-white transition hover:bg-slate-800 active:scale-95 cursor-pointer"
+                >
+                  Contact Now
                 </button>
               </div>
             </div>
@@ -127,6 +144,15 @@ export default function LandingFooter({
                     label={item}
                     onClick={() => {
                       if (item === 'Contact us') scrollToHash('#contact');
+                      if (item === 'About Us')
+                        window.open('https://kavimports.com/aboutus', '_blank');
+                      if (item === 'Products')
+                        window.open(
+                          'https://kavimports.com/products',
+                          '_blank',
+                        );
+                      if (item === 'Customization') scrollToHash('#contact');
+                      if (item === 'Bulk Orders') scrollToHash('#contact');
                     }}
                   />
                 ))}
@@ -143,11 +169,61 @@ export default function LandingFooter({
                     label={item}
                     onClick={() => {
                       if (item === 'Garbage Bags') {
-                        navigate('/');
+                        navigate('/commercial-garbage-bags');
                         window.scrollTo(0, 0);
                       } else if (item === 'Poly Mailer Bags') {
                         navigate('/poly-mailer-bags');
                         window.scrollTo(0, 0);
+                      } else if (item === 'Wicket Bags') {
+                        window.open(
+                          'https://kavimports.com/product/7',
+                          '_blank',
+                        );
+                      } else if (item === 'Ice Bags') {
+                        window.open(
+                          'https://kavimports.com/product/1',
+                          '_blank',
+                        );
+                      } else if (item === 'Product Rolls') {
+                        window.open(
+                          'https://kavimports.com/product/9',
+                          '_blank',
+                        );
+                      } else if (item === 'Poly bags') {
+                        window.open(
+                          'https://kavimports.com/product/11',
+                          '_blank',
+                        );
+                      } else if (item === 'Paper Bags') {
+                        window.open(
+                          'https://kavimports.com/product/3',
+                          '_blank',
+                        );
+                      } else if (item === 'Foil Container') {
+                        window.open(
+                          'https://kavimports.com/product/4',
+                          '_blank',
+                        );
+                      } else if (item === 'Thermal Paper Rolls') {
+                        window.open(
+                          'https://kavimports.com/product/5',
+                          '_blank',
+                        );
+                      } else if (item === 'Tshirt Bags') {
+                        window.open(
+                          'https://kavimports.com/product/6',
+                          '_blank',
+                        );
+                      } else if (item === 'Foil Pop Up Sheets & Roll Sheets') {
+                        window.open(
+                          'https://kavimports.com/product/8',
+                          '_blank',
+                        );
+                      } else if (item === 'Plastic Reusable Bags') {
+                        window.open(
+                          'https://kavimports.com/product/13',
+                          '_blank',
+                        );
                       }
                     }}
                   />
@@ -165,6 +241,21 @@ export default function LandingFooter({
                     label={item}
                     onClick={() => {
                       if (item === 'FAQs') scrollToHash('#faqs');
+                      else if (item === 'Return Policy')
+                        window.open(
+                          'https://kavimports.com/return-policy',
+                          '_blank',
+                        );
+                      else if (item === 'Privacy Policy')
+                        window.open(
+                          'https://kavimports.com/privacy-policy',
+                          '_blank',
+                        );
+                      else if (item === 'Terms & Conditions')
+                        window.open(
+                          'https://kavimports.com/terms-and-conditions',
+                          '_blank',
+                        );
                     }}
                   />
                 ))}
@@ -289,10 +380,15 @@ export default function LandingFooter({
           </p>
 
           <div className="flex items-center gap-4 text-white">
-            <SocialIcon platform="instagram" />
-            <SocialIcon platform="facebook" />
-            <SocialIcon platform="google" />
-            <SocialIcon platform="x" />
+            <SocialIcon
+              platform="instagram"
+              href="https://www.instagram.com/kav_import/"
+            />
+            <SocialIcon
+              platform="facebook"
+              href="https://www.facebook.com/KavImportsTexas"
+            />
+            <SocialIcon platform="x" href="https://x.com/importskav" />
           </div>
         </div>
       </div>
@@ -316,8 +412,10 @@ function ListItem({ label, onClick }: { label: string; onClick?: () => void }) {
 
 function SocialIcon({
   platform,
+  href = '#',
 }: {
-  platform: 'instagram' | 'facebook' | 'google' | 'x';
+  platform: 'instagram' | 'facebook' | 'x';
+  href?: string;
 }) {
   const icons = {
     instagram: (
@@ -338,15 +436,6 @@ function SocialIcon({
         <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
       </svg>
     ),
-    google: (
-      <svg
-        viewBox="0 0 24 24"
-        className="h-5 w-5 fill-current"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C17.987 1.187 15.653 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.747-.067-1.493-.187-2.053H12.48z" />
-      </svg>
-    ),
     x: (
       <svg
         viewBox="0 0 24 24"
@@ -360,7 +449,9 @@ function SocialIcon({
 
   return (
     <a
-      href="#"
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
       className="flex h-10 w-10 items-center justify-center rounded-full bg-black text-white transition hover:bg-blue-600"
       aria-label={platform}
     >
