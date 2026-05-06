@@ -1,7 +1,8 @@
+import { useState } from 'react';
 import { type NavLink } from '../components/landing/LandingHeader';
 import LandingHeader from '../components/landing/LandingHeader';
 import LandingFooter from '../components/landing/LandingFooter';
-import TrustedBySection from '../components/landing/TrustedBySection';
+// import TrustedBySection from '../components/landing/TrustedBySection';
 import ProductSizesSection, {
   type ProductSize,
 } from '../components/landing/ProductSizesSection';
@@ -14,11 +15,14 @@ import FaqSection, { type Faq } from '../components/landing/FaqSection';
 import bagImage from '../assets/image 5.png';
 import TwoBagsImage from '../assets/Group 1410136870.png';
 import bagAndBinImage from '../assets/image 15.png';
-import sizeFrameImage from '../assets/Frame 1000003303.png';
 import heroPatternLeft from '../assets/Group 237495.png';
 import heroPatternRight from '../assets/Group 237494.png';
 import heroMobilePattern from '../assets/Group 237495 (1).png';
 import circleBg from '../assets/Group 1410136861.png';
+import garbageBag1 from '../assets/garbagebag1.png';
+import garbageBag2 from '../assets/garbagebag2.png';
+import garbageBag3 from '../assets/garbagebag3.png';
+import garbageBag4 from '../assets/garbagebag4.png';
 import { scrollToHash } from '../utils/scrollToHash';
 import industriesBgSectionImage from '../assets/Frame 1000003310 (1).png';
 
@@ -38,27 +42,42 @@ const PRODUCT_SIZES: ProductSize[] = [
   {
     id: 'size-1',
     title: 'Small Garbage Bags',
-    shortLabel: 'Size 1',
-    size: '18 × 24 inches',
-    capacity: '10 – 15 Gallons',
+    shortLabel: 'Small',
+    size: '20 × 22 inches',
+    capacity: '7 – 10 Gallons',
+    material: 'LLDPE material',
     idealFor:
-      'Bathroom garbage bags, small office garbage bags, household garbage bags',
+      'Bathroom garbage bins, small office wastebaskets, bedside cans, and light household use.',
   },
   {
     id: 'size-2',
     title: 'Medium Garbage Bags',
-    shortLabel: 'Size 2',
-    size: '24 × 32 inches',
-    capacity: '20 – 35 Gallons',
-    idealFor: 'Commercial kitchens, clinics, hospitality back areas',
+    shortLabel: 'Medium',
+    size: '30 × 37 inches',
+    capacity: '20 – 30 Gallons',
+    material: 'LLDPE material',
+    idealFor:
+      'Kitchen trash cans, office breakrooms, clinics, and medium-sized commercial bins.',
   },
   {
     id: 'size-3',
     title: 'Large Garbage Bags',
-    shortLabel: 'Size 3',
-    size: '30 × 40 inches',
-    capacity: '40 – 80 Gallons',
-    idealFor: 'Warehouses, heavy-duty facility and industrial waste use',
+    shortLabel: 'Large',
+    size: '40 × 48 inches',
+    capacity: '40 – 45 Gallons',
+    material: 'LLDPE material',
+    idealFor:
+      'Large commercial kitchens, warehouses, landscaping waste, and heavy-duty facility use.',
+  },
+  {
+    id: 'size-4',
+    title: 'Extra Large Garbage Bags',
+    shortLabel: 'Extra Large',
+    size: '38 × 58 inches',
+    capacity: '55 – 60 Gallons',
+    material: 'LLDPE material',
+    idealFor:
+      'Industrial waste, construction debris, large outdoor roll-out bins, and high-volume disposal.',
   },
 ];
 
@@ -175,13 +194,22 @@ const FEATURES = [
 
 /* ─── Page ───────────────────────────────────────────────── */
 export default function CommercialGarbageBagsPage() {
+  const [contactMessage, setContactMessage] = useState('');
+
+  const handleBuyNow = (size: ProductSize) => {
+    setContactMessage(
+      `Hello, I am interested in purchasing your ${size.title} (${size.size}, ${size.capacity}). Could you please provide a bulk pricing quote?`,
+    );
+  };
+
   return (
     <div id="top" className="min-h-screen bg-white text-[#101214]">
       <LandingHeader links={NAV_LINKS} />
 
       <main>
-        {/* ── Hero ─────────────────────────────────────────── */}
+        {/* ... Hero Section remains unchanged ... */}
         <section className="relative overflow-hidden bg-[#dfe7f8] py-20 md:py-22 lg:py-22">
+          {/* ... Hero Content ... */}
           <img
             src={heroPatternLeft}
             alt=""
@@ -200,9 +228,7 @@ export default function CommercialGarbageBagsPage() {
           />
 
           <div className="mx-auto flex flex-col items-center gap-16 px-4 lg:grid lg:grid-cols-2 md:px-16 lg:px-16">
-            {/* Image Content - First on Mobile, Second on Desktop */}
             <div className="relative order-1 mx-auto flex w-full max-w-[580px] items-center justify-center lg:order-2 lg:mx-0 lg:justify-end">
-              {/* Background Decoration */}
               <div className="absolute inset-0 z-0 flex items-center justify-center">
                 <img
                   src={heroMobilePattern}
@@ -224,7 +250,6 @@ export default function CommercialGarbageBagsPage() {
                 className="relative z-10 w-full drop-shadow-[0_45px_100px_rgba(0,0,0,0.18)]"
               />
 
-              {/* Floating Badges */}
               <div className="absolute -left-4 top-[30%] z-20 lg:top-[35%]">
                 <div className="flex items-center gap-2 rounded-full border border-slate-100 bg-white px-3 py-2 text-[10px] font-bold shadow-xl sm:gap-3 sm:px-5 sm:py-3 sm:text-sm">
                   <RadioADot /> Industrial-Grade Materials
@@ -242,7 +267,6 @@ export default function CommercialGarbageBagsPage() {
               </div>
             </div>
 
-            {/* Text Content - Second on Mobile, First on Desktop */}
             <div className="relative z-10 order-2 flex flex-col items-center text-center lg:order-1 lg:items-start lg:text-left">
               <span className="inline-block rounded-full border border-blue-200 bg-white/80 px-5 py-2 text-sm font-bold tracking-tight text-blue-600">
                 For Businesses &amp; Bulk Buyers
@@ -283,16 +307,14 @@ export default function CommercialGarbageBagsPage() {
           </div>
         </section>
 
-        {/* ── Shared components ─────────────────────────────── */}
-        <TrustedBySection />
-
         <ProductSizesSection
           sizes={PRODUCT_SIZES}
-          frameImage={sizeFrameImage}
+          images={[garbageBag1, garbageBag2, garbageBag3, garbageBag4]}
           frameImageAlt="Garbage bag size reference"
+          onBuyNow={handleBuyNow}
         />
 
-        {/* ── Key Features ─────────────────────────────────── */}
+        {/* ... Rest of sections remain unchanged ... */}
         <section id="features" className="bg-[#f1f3f5] py-20 lg:py-48">
           <div className="mx-auto grid items-center gap-16 px-4 lg:grid-cols-3 lg:px-16">
             <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
@@ -381,6 +403,7 @@ export default function CommercialGarbageBagsPage() {
           heading="Request Product"
           headingHighlight="Information or Bulk Pricing"
           productLabel="garbage bags"
+          initialMessage={contactMessage}
         />
 
         <CustomizationSection

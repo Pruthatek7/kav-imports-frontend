@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
 import GoogleMapEmbed from './GoogleMapEmbed';
 import { scrollToHash } from '../../utils/scrollToHash';
@@ -19,11 +19,13 @@ export default function ContactSection({
   headingHighlight = 'Information or Bulk Pricing',
   subtitle,
   productLabel = 'garbage bags',
+  initialMessage = '',
 }: {
   heading?: string;
   headingHighlight?: string;
   subtitle?: string;
   productLabel?: string;
+  initialMessage?: string;
 }) {
   const [formData, setFormData] = useState({
     name: '',
@@ -32,6 +34,14 @@ export default function ContactSection({
     requiredQuantity: '',
     message: '',
   });
+
+  // Update message when initialMessage changes
+  useEffect(() => {
+    if (initialMessage) {
+      setFormData((prev) => ({ ...prev, message: initialMessage }));
+    }
+  }, [initialMessage]);
+
   const [status, setStatus] = useState<
     'idle' | 'submitting' | 'success' | 'error'
   >('idle');
