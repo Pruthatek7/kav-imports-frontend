@@ -1,9 +1,28 @@
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { scrollToHash } from '../../utils/scrollToHash';
 
 import logo from '../../assets/logo.png';
 
 export type NavLink = { label: string; href: string };
+
+const SEARCHABLE_PRODUCTS = [
+  { name: 'Garbage Bags', link: '/commercial-garbage-bags' },
+  { name: 'Poly Mailer Bags', link: '/poly-mailer-bags' },
+  { name: 'Wicket Bags', link: 'https://kavimports.com/product/7' },
+  { name: 'Ice Bags', link: 'https://kavimports.com/product/1' },
+  { name: 'Product Rolls', link: 'https://kavimports.com/product/9' },
+  { name: 'Poly bags', link: 'https://kavimports.com/product/11' },
+  { name: 'Paper Bags', link: 'https://kavimports.com/product/3' },
+  { name: 'Foil Container', link: 'https://kavimports.com/product/4' },
+  { name: 'Thermal Paper Rolls', link: 'https://kavimports.com/product/5' },
+  { name: 'Tshirt Bags', link: 'https://kavimports.com/product/6' },
+  {
+    name: 'Foil Pop Up Sheets & Roll Sheets',
+    link: 'https://kavimports.com/product/8',
+  },
+  { name: 'Plastic Reusable Bags', link: 'https://kavimports.com/product/13' },
+];
 
 export default function LandingHeader({
   links,
@@ -15,15 +34,33 @@ export default function LandingHeader({
   contactNumber?: string;
 }) {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
+  const navigate = useNavigate();
 
   useEffect(() => {
-    if (!menuOpen) return;
+    if (!menuOpen && !searchOpen) return;
     const prev = document.body.style.overflow;
     document.body.style.overflow = 'hidden';
     return () => {
       document.body.style.overflow = prev;
     };
-  }, [menuOpen]);
+  }, [menuOpen, searchOpen]);
+
+  const filteredProducts = SEARCHABLE_PRODUCTS.filter((p) =>
+    p.name.toLowerCase().includes(searchQuery.toLowerCase()),
+  );
+
+  const handleProductClick = (link: string) => {
+    setSearchOpen(false);
+    setSearchQuery('');
+    if (link.startsWith('http')) {
+      window.open(link, '_blank');
+    } else {
+      navigate(link);
+      window.scrollTo(0, 0);
+    }
+  };
 
   return (
     <>
@@ -107,6 +144,25 @@ export default function LandingHeader({
                 {l.label}
               </a>
             ))}
+            <button
+              type="button"
+              onClick={() => setSearchOpen(true)}
+              className="flex h-10 w-10 items-center justify-center rounded-full bg-slate-50 text-slate-600 transition hover:bg-blue-50 hover:text-blue-600"
+              aria-label="Search products"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                className="h-5 w-5"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <circle cx="11" cy="11" r="8" />
+                <path d="m21 21-4.3-4.3" />
+              </svg>
+            </button>
           </nav>
         </div>
 
@@ -159,6 +215,7 @@ export default function LandingHeader({
               type="button"
               aria-label="Search"
               className="grid h-10 w-10 place-items-center rounded-full bg-[#4285F4] text-white shadow-md transition hover:bg-blue-600"
+              onClick={() => setSearchOpen(true)}
             >
               <svg
                 viewBox="0 0 24 24"
@@ -249,6 +306,99 @@ export default function LandingHeader({
             >
               {mobileBottomCta.label}
             </a>
+          </div>
+        </div>
+      )}
+      {/* Search overlay */}
+      {searchOpen && (
+        <div
+          className="fixed inset-0 z-[100] flex flex-col bg-white"
+          role="dialog"
+          aria-modal
+        >
+          {/* Header */}
+          <div className="flex h-20 items-center justify-between border-b border-slate-100 px-6 lg:px-12">
+            <div className="flex flex-1 items-center gap-4">
+              <svg
+                viewBox="0 0 24 24"
+                className="h-6 w-6 text-slate-400"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.5"
+              >
+                <circle cx="11" cy="11" r="8" />
+                <path d="m21 21-4.3-4.3" />
+              </svg>
+              <input
+                type="text"
+                autoFocus
+                placeholder="Search products..."
+                className="w-full bg-transparent text-xl font-medium text-slate-900 outline-none placeholder:text-slate-400"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+              />
+            </div>
+            <button
+              type="button"
+              className="ml-4 grid h-10 w-10 place-items-center rounded-full bg-slate-100 text-slate-600 transition hover:bg-slate-200"
+              onClick={() => {
+                setSearchOpen(false);
+                setSearchQuery('');
+              }}
+            >
+              <svg
+                viewBox="0 0 24 24"
+                className="h-6 w-6"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+              >
+                <path d="M18 6L6 18M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+
+          {/* Results */}
+          <div className="flex-1 overflow-y-auto px-6 py-8 lg:px-12">
+            <div className="mx-auto max-w-3xl">
+              <h3 className="mb-6 text-sm font-bold uppercase tracking-wider text-slate-400">
+                Product Results
+              </h3>
+              <div className="grid gap-2">
+                {filteredProducts.length > 0 ? (
+                  filteredProducts.map((product) => (
+                    <button
+                      key={product.name}
+                      onClick={() => handleProductClick(product.link)}
+                      className="flex items-center justify-between rounded-2xl border border-slate-50 bg-slate-50/50 p-5 text-left transition hover:border-blue-200 hover:bg-blue-50/50 group"
+                    >
+                      <span className="text-lg font-semibold text-slate-800 transition group-hover:text-blue-600">
+                        {product.name}
+                      </span>
+                      <svg
+                        viewBox="0 0 24 24"
+                        className="h-5 w-5 text-slate-300 transition group-hover:translate-x-1 group-hover:text-blue-400"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2.5"
+                      >
+                        <path
+                          d="M9 5l7 7-7 7"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                      </svg>
+                    </button>
+                  ))
+                ) : (
+                  <div className="py-12 text-center">
+                    <p className="text-lg text-slate-500">
+                      No products found matching "{searchQuery}"
+                    </p>
+                  </div>
+                )}
+              </div>
+            </div>
           </div>
         </div>
       )}
