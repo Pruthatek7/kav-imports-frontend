@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { type NavLink } from '../components/landing/LandingHeader';
 import LandingHeader from '../components/landing/LandingHeader';
 import LandingFooter from '../components/landing/LandingFooter';
@@ -19,6 +20,9 @@ import customizedMailerBagImage from '../assets/Group 1410136869 (1).png';
 import polybagImage from '../assets/image 14.png';
 import { scrollToHash } from '../utils/scrollToHash';
 import footerPolyBagImage from '../assets/image 8.png';
+import polyMailer1 from '../assets/PolyMailer.png';
+import polyMailer2 from '../assets/PolyMailer2.png';
+import polyMailer3 from '../assets/PolyMailer3.png';
 
 /* ─── Data ───────────────────────────────────────────────── */
 const NAV_LINKS: NavLink[] = [
@@ -35,29 +39,94 @@ const NAV_LINKS: NavLink[] = [
 const PRODUCT_SIZES: ProductSize[] = [
   {
     id: 'size-1',
-    title: 'Small Polymailer Bags',
-    shortLabel: 'Size 1',
-    size: '10 × 13 inches',
-    capacity: '10 – 15 Liters',
-    idealFor: 'Apparel, small accessories, household use',
+    title: '5 × 7 Polymailer',
+    shortLabel: '5x7',
+    size: '5 × 7 inches',
+    material: 'LLDPE material',
+    idealFor: 'Jewelry, keys, small parts, coins, seeds, and micro-accessories.',
   },
   {
     id: 'size-2',
-    title: 'Medium Polymailer Bags',
-    shortLabel: 'Size 2',
-    size: '14.5 × 19 inches',
-    capacity: '20 – 35 Liters',
-    idealFor: 'Sweaters, shoe boxes, retail shipping',
+    title: '6 × 9 Polymailer',
+    shortLabel: '6x9',
+    size: '6 × 9 inches',
+    material: 'LLDPE material',
+    idealFor: 'Cosmetics, sunglasses, small accessories, cards, and passports.',
   },
   {
     id: 'size-3',
-    title: 'Large Polymailer Bags',
-    shortLabel: 'Size 3',
+    title: '7.5 × 10.5 Polymailer',
+    shortLabel: '7.5x10.5',
+    size: '7.5 × 10.5 inches',
+    material: 'LLDPE material',
+    idealFor: 'DVD cases, small journals, thin books, and small t-shirts.',
+  },
+  {
+    id: 'size-4',
+    title: '9 × 12 Polymailer',
+    shortLabel: '9x12',
+    size: '9 × 12 inches',
+    material: 'LLDPE material',
+    idealFor: 'Standard documents, catalogs, t-shirts, and thin clothing.',
+  },
+  {
+    id: 'size-5',
+    title: '10 × 13 Polymailer',
+    shortLabel: '10x13',
+    size: '10 × 13 inches',
+    material: 'LLDPE material',
+    idealFor: 'Standard apparel, magazines, soft goods, and larger t-shirts.',
+  },
+  {
+    id: 'size-6',
+    title: '12 × 15.5 Polymailer',
+    shortLabel: '12x15.5',
+    size: '12 × 15.5 inches',
+    material: 'LLDPE material',
+    idealFor: 'Sweaters, thin jackets, multiple t-shirts, and handbags.',
+  },
+  {
+    id: 'size-7',
+    title: '14 × 17 Polymailer',
+    shortLabel: '14x17',
+    size: '14 × 17 inches',
+    material: 'LLDPE material',
+    idealFor: 'Bulky clothing, large jackets, and multiple apparel items.',
+  },
+  {
+    id: 'size-8',
+    title: '14.5 × 19 Polymailer',
+    shortLabel: '14.5x19',
+    size: '14.5 × 19 inches',
+    material: 'LLDPE material',
+    idealFor: 'Shoe boxes, small parcels, and bulky soft goods.',
+  },
+  {
+    id: 'size-9',
+    title: '19 × 24 Polymailer',
+    shortLabel: '19x24',
+    size: '19 × 24 inches',
+    material: 'LLDPE material',
+    idealFor: 'Large bedding, towels, winter coats, and multiple shoe boxes.',
+  },
+  {
+    id: 'size-10',
+    title: '24 × 24 Polymailer',
+    shortLabel: '24x24',
     size: '24 × 24 inches',
-    capacity: '40 – 80 Liters',
-    idealFor: 'Large soft goods, bulk clothing',
+    material: 'LLDPE material',
+    idealFor: 'Extra large bedding, pillows, and bulk clothing orders.',
+  },
+  {
+    id: 'size-11',
+    title: '24 × 36 Polymailer',
+    shortLabel: '24x36',
+    size: '24 × 36 inches',
+    material: 'LLDPE material',
+    idealFor: 'Oversized items, heavy-duty shipping, and largest bulk orders.',
   },
 ];
+
 
 const INDUSTRIES = [
   {
@@ -165,12 +234,20 @@ const FEATURES = [
 
 /* ─── Page ───────────────────────────────────────────────── */
 export default function PolyMailerBagsPage() {
+  const [contactMessage, setContactMessage] = useState('');
+
+  const handleBuyNow = (size: ProductSize) => {
+    setContactMessage(
+      `Hello, I am interested in purchasing your ${size.title} (Size: ${size.size}, Material: ${size.material}). Could you please provide a bulk pricing quote?`
+    );
+  };
+
   return (
     <div id="top" className="min-h-screen bg-white text-[#101214]">
       <LandingHeader links={NAV_LINKS} />
 
       <main>
-        {/* ── Hero ─────────────────────────────────────────── */}
+        {/* ... Hero Section remains unchanged ... */}
         <section className="relative overflow-hidden bg-[#DFE9FF] py-20 md:py-20 lg:py-20">
           <div className="mx-auto grid gap-12 items-center lg:grid-cols-2">
             <div className="relative z-10 px-4 lg:px-24 flex flex-col items-center text-center lg:items-start lg:text-left order-2 lg:order-1">
@@ -223,16 +300,14 @@ export default function PolyMailerBagsPage() {
           </div>
         </section>
 
-        {/* ── Shared components ─────────────────────────────── */}
-        {/* <TrustedBySection /> */}
-
         <ProductSizesSection
           sizes={PRODUCT_SIZES}
-          frameImage={sizeFrameImage}
+          images={[polyMailer1, polyMailer2, polyMailer3]}
           frameImageAlt="Poly mailer size reference"
+          onBuyNow={handleBuyNow}
         />
 
-        {/* ── Key Features ─────────────────────────────────── */}
+        {/* ... Rest of sections remain unchanged ... */}
         <section id="features" className="bg-[#E8F1FF] py-20 lg:py-16">
           <div className="mx-auto grid items-center gap-16 px-4 lg:px-16">
             <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
@@ -317,6 +392,7 @@ export default function PolyMailerBagsPage() {
           heading="Request Product"
           headingHighlight="Information or Bulk Pricing"
           productLabel="poly mailer bags"
+          initialMessage={contactMessage}
         />
 
         <CustomizationSection
