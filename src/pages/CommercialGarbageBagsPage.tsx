@@ -15,7 +15,6 @@ import FaqSection, { type Faq } from '../components/landing/FaqSection';
 import bagImage from '../assets/image 5.png';
 import TwoBagsImage from '../assets/Group 1410136870.png';
 import bagAndBinImage from '../assets/image 15.png';
-import sizeFrameImage from '../assets/Frame 1000003303.png';
 import heroPatternLeft from '../assets/Group 237495.png';
 import heroPatternRight from '../assets/Group 237494.png';
 import heroMobilePattern from '../assets/Group 237495 (1).png';
@@ -57,7 +56,8 @@ const PRODUCT_SIZES: ProductSize[] = [
     size: '30 × 37 inches',
     capacity: '20 – 30 Gallons',
     material: 'LLDPE material',
-    idealFor: 'Kitchen trash cans, office breakrooms, clinics, and medium-sized commercial bins.',
+    idealFor:
+      'Kitchen trash cans, office breakrooms, clinics, and medium-sized commercial bins.',
   },
   {
     id: 'size-3',
@@ -66,7 +66,8 @@ const PRODUCT_SIZES: ProductSize[] = [
     size: '40 × 48 inches',
     capacity: '40 – 45 Gallons',
     material: 'LLDPE material',
-    idealFor: 'Large commercial kitchens, warehouses, landscaping waste, and heavy-duty facility use.',
+    idealFor:
+      'Large commercial kitchens, warehouses, landscaping waste, and heavy-duty facility use.',
   },
   {
     id: 'size-4',
@@ -75,7 +76,8 @@ const PRODUCT_SIZES: ProductSize[] = [
     size: '38 × 58 inches',
     capacity: '55 – 60 Gallons',
     material: 'LLDPE material',
-    idealFor: 'Industrial waste, construction debris, large outdoor roll-out bins, and high-volume disposal.',
+    idealFor:
+      'Industrial waste, construction debris, large outdoor roll-out bins, and high-volume disposal.',
   },
 ];
 
@@ -196,7 +198,7 @@ export default function CommercialGarbageBagsPage() {
 
   const handleBuyNow = (size: ProductSize) => {
     setContactMessage(
-      `Hello, I am interested in purchasing your ${size.title} (${size.size}, ${size.capacity}). Could you please provide a bulk pricing quote?`
+      `Hello, I am interested in purchasing your ${size.title} (${size.size}, ${size.capacity}). Could you please provide a bulk pricing quote?`,
     );
   };
 

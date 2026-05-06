@@ -14,7 +14,6 @@ import FaqSection, { type Faq } from '../components/landing/FaqSection';
 
 import bagImage from '../assets/Group 1410136867.png';
 import industriesBgSectionImage from '../assets/Frame 1000003310 (1).png';
-import sizeFrameImage from '../assets/Frame 1000003303 (1).png';
 import polyBagsKeyFeaturesImage from '../assets/image 7.png';
 import customizedMailerBagImage from '../assets/Group 1410136869 (1).png';
 import polybagImage from '../assets/image 14.png';
@@ -43,7 +42,8 @@ const PRODUCT_SIZES: ProductSize[] = [
     shortLabel: '5x7',
     size: '5 × 7 inches',
     material: 'LLDPE material',
-    idealFor: 'Jewelry, keys, small parts, coins, seeds, and micro-accessories.',
+    idealFor:
+      'Jewelry, keys, small parts, coins, seeds, and micro-accessories.',
   },
   {
     id: 'size-2',
@@ -126,7 +126,6 @@ const PRODUCT_SIZES: ProductSize[] = [
     idealFor: 'Oversized items, heavy-duty shipping, and largest bulk orders.',
   },
 ];
-
 
 const INDUSTRIES = [
   {
@@ -238,7 +237,7 @@ export default function PolyMailerBagsPage() {
 
   const handleBuyNow = (size: ProductSize) => {
     setContactMessage(
-      `Hello, I am interested in purchasing your ${size.title} (Size: ${size.size}, Material: ${size.material}). Could you please provide a bulk pricing quote?`
+      `Hello, I am interested in purchasing your ${size.title} (Size: ${size.size}, Material: ${size.material}). Could you please provide a bulk pricing quote?`,
     );
   };
 
