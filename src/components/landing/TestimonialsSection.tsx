@@ -10,11 +10,9 @@ export interface Testimonial {
 }
 
 export default function TestimonialsSection({
-  reviewCount = '11.6k',
   testimonials = [],
   subtitle,
 }: {
-  reviewCount?: string;
   testimonials?: Testimonial[];
   subtitle?: string;
 }) {
