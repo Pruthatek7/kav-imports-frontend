@@ -19,8 +19,6 @@ import heroPatternLeft from '../assets/Group 237495.png';
 import heroPatternRight from '../assets/Group 237494.png';
 import heroMobilePattern from '../assets/Group 237495 (1).png';
 import circleBg from '../assets/Group 1410136861.png';
-import testimonialAvatar from '../assets/Frame 52.png';
-import testimonialImage from '../assets/Group 1410136864.png';
 import { scrollToHash } from '../utils/scrollToHash';
 import industriesBgSectionImage from '../assets/Frame 1000003310 (1).png';
 
@@ -121,6 +119,39 @@ const CUSTOMIZATION_BULLETS = [
   'Private label branding',
   'Logo printing on bags',
   'Custom packaging for distributors',
+];
+
+const TESTIMONIALS = [
+  {
+    reviewerName: 'Michael Turner',
+    quote:
+      'These commercial garbage bags are extremely durable and perfect for our restaurant kitchen operations. Even heavy waste loads are handled without tearing.',
+    reviewerTitle: 'Restaurant Owner',
+  },
+  {
+    reviewerName: 'Priya Shah',
+    quote:
+      'We use these bags daily in our warehouse facility, and the quality has been consistently excellent. Strong material and reliable performance.',
+    reviewerTitle: 'Warehouse Operations Manager',
+  },
+  {
+    reviewerName: 'Daniel Brooks',
+    quote:
+      'These are the best heavy-duty garbage bags we’ve purchased for our cleaning business. No leakage, no ripping, and excellent capacity.',
+    reviewerTitle: 'Commercial Cleaning Contractor',
+  },
+  {
+    reviewerName: 'Sophia Martinez',
+    quote:
+      'The thickness and strength of these garbage bags are impressive. Perfect for commercial and industrial waste disposal needs.',
+    reviewerTitle: 'Hotel Facility Supervisor',
+  },
+  {
+    reviewerName: 'Aarav Mehta',
+    quote:
+      'We’ve ordered these garbage bags multiple times for our retail stores, and the durability has always exceeded expectations.',
+    reviewerTitle: 'Retail Operations Manager',
+  },
 ];
 
 /* ─── Shared tiny helpers ────────────────────────────────── */
@@ -362,12 +393,7 @@ export default function CommercialGarbageBagsPage() {
         />
 
         <TestimonialsSection
-          productImage={testimonialImage}
-          productImageAlt="Commercial garbage bag"
-          avatarImage={testimonialAvatar}
-          quote="These garbage bags are extremely durable and perfect for our restaurant kitchen. We've been ordering them regularly."
-          reviewerName="Maithali Raj"
-          reviewerTitle="Restaurant Owner"
+          testimonials={TESTIMONIALS}
           subtitle="Our team works closely with businesses to deliver high-quality, durable solutions tailored to real-world needs. From small kitchens to large-scale operations, we ensure consistency, reliability, and satisfaction at every step."
         />
 

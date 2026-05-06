@@ -15,9 +15,7 @@ import sizeFrameImage from '../assets/Frame 1000003303 (1).png'
 import polyBagsKeyFeaturesImage from '../assets/image 7.png'
 import customizedMailerBagImage from '../assets/Group 1410136869 (1).png'
 import polybagImage from '../assets/image 14.png'
-import testimonialAvatar from '../assets/Frame 52.png'
 import { scrollToHash } from '../utils/scrollToHash'
-import polyBagTestimonialImage from '../assets/Group 1410136866.png'
 import footerPolyBagImage from '../assets/image 8.png'
 
 /* ─── Data ───────────────────────────────────────────────── */
@@ -80,6 +78,39 @@ const CUSTOMIZATION_BULLETS = [
   'Custom colors',
   'Branded poly mailers with company logos',
   'Special bulk packaging options',
+]
+
+const TESTIMONIALS = [
+  {
+    reviewerName: 'Jessica Morgan',
+    quote:
+      'These poly mailer bags are lightweight, durable, and perfect for our eCommerce shipping requirements. Customers love the professional packaging.',
+    reviewerTitle: 'Online Store Owner',
+  },
+  {
+    reviewerName: 'Kevin Richardson',
+    quote:
+      'The adhesive seal is strong and secure, making shipping much easier for our fulfillment team. Great quality mailer bags.',
+    reviewerTitle: 'Logistics Coordinator',
+  },
+  {
+    reviewerName: 'Emily Carter',
+    quote:
+      'We ship hundreds of apparel orders weekly, and these poly mailers provide excellent protection while keeping shipping costs low.',
+    reviewerTitle: 'Fashion Brand Founder',
+  },
+  {
+    reviewerName: 'Rohan Patel',
+    quote:
+      'These premium mailer bags are tear-resistant and waterproof, which gives us confidence during long-distance deliveries.',
+    reviewerTitle: 'eCommerce Operations Manager',
+  },
+  {
+    reviewerName: 'Sophia Turner',
+    quote:
+      'Excellent print quality and material finish. These mailer bags help our brand packaging look much more professional and premium.',
+    reviewerTitle: 'Small Business Owner',
+  },
 ]
 
 const FEATURES = [
@@ -235,12 +266,7 @@ export default function PolyMailerBagsPage() {
         />
 
         <TestimonialsSection
-          productImage={polyBagTestimonialImage}
-          productImageAlt="Poly mailer bag"
-          avatarImage={testimonialAvatar}
-          quote="These poly mailer bags are extremely durable and perfect for our online store. We've been ordering them regularly."
-          reviewerName="Maithali Raj"
-          reviewerTitle="eCommerce Owner"
+          testimonials={TESTIMONIALS}
           subtitle="Our team works closely with businesses to deliver high-quality, durable solutions tailored to real-world needs. From small boutiques to large-scale operations, we ensure consistency, reliability, and satisfaction at every step."
         />
 
