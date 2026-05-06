@@ -1,7 +1,7 @@
 import { type NavLink } from '../components/landing/LandingHeader';
 import LandingHeader from '../components/landing/LandingHeader';
 import LandingFooter from '../components/landing/LandingFooter';
-import TrustedBySection from '../components/landing/TrustedBySection';
+// import TrustedBySection from '../components/landing/TrustedBySection';
 import ProductSizesSection, {
   type ProductSize,
 } from '../components/landing/ProductSizesSection';
@@ -284,7 +284,7 @@ export default function CommercialGarbageBagsPage() {
         </section>
 
         {/* ── Shared components ─────────────────────────────── */}
-        <TrustedBySection />
+        {/* <TrustedBySection /> */}
 
         <ProductSizesSection
           sizes={PRODUCT_SIZES}
