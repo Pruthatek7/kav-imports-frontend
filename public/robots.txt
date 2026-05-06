@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://kav-imports-frontend.vercel.app/sitemap.xml
+Sitemap: https://sales.kavimports.com/sitemap.xml

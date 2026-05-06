@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>KAV Imports Locations</name>
+    <description>KAV Imports business locations in New Jersey and Texas.</description>
+    <Placemark>
+      <name>KAV Imports LLC - New Jersey</name>
+      <description>620 Ramsey Ave, Hillside, NJ 07205</description>
+      <Point>
+        <coordinates>-74.2253,40.6974,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>KAV Imports LLC - Texas</name>
+      <description>12814 Murphy Rd, Stafford, TX 77477</description>
+      <Point>
+        <coordinates>-95.5786,29.6277,0</coordinates>
+      </Point>
+    </Placemark>
+  </Document>
+</kml>
