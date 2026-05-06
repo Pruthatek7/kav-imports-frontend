@@ -1,0 +1,25 @@
+{
+  "business": "KAV Imports LLC",
+  "locations": [
+    {
+      "name": "New Jersey Branch",
+      "address": "620 Ramsey Ave, Hillside, NJ 07205",
+      "coordinates": {
+        "latitude": 40.6974,
+        "longitude": -74.2253
+      },
+      "phone": "(914) 703-2250",
+      "email": "jay@kavimports.com"
+    },
+    {
+      "name": "Texas Branch",
+      "address": "12814 Murphy Rd, Stafford, TX 77477",
+      "coordinates": {
+        "latitude": 29.6277,
+        "longitude": -95.5786
+      },
+      "phone": "(615) 414-5595",
+      "email": "texas@kavimports.com"
+    }
+  ]
+}
