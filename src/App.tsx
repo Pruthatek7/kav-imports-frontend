@@ -1,5 +1,14 @@
 import { lazy, Suspense } from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
+
+// Declare gtag for TypeScript
+declare global {
+  interface Window {
+    dataLayer: any[];
+    gtag: (...args: any[]) => void;
+  }
+}
 
 // Route-based code splitting
 const CommercialGarbageBagsPage = lazy(
@@ -16,6 +25,16 @@ const PageLoader = () => (
 );
 
 export default function App() {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (typeof window.gtag === 'function') {
+      const pagePath = location.pathname + location.search;
+      window.gtag('config', import.meta.env.VITE_GOOGLE_ADS_ID, { page_path: pagePath });
+      window.gtag('config', import.meta.env.VITE_GOOGLE_ANALYTICS_ID, { page_path: pagePath });
+    }
+  }, [location]);
+
   return (
     <Suspense fallback={<PageLoader />}>
       <Routes>
