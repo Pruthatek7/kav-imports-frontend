@@ -97,11 +97,8 @@ export default function ContactSection({
       const response = await axios.post(`${apiUrl}/contacts`, formData);
 
       if (response.data.success) {
-        // Track Google Ads conversion specifically for garbage bags
-        if (
-          productLabel === 'garbage bags' &&
-          typeof (window as any).gtag === 'function'
-        ) {
+        // Track Google Ads conversion for all successful inquiries
+        if (typeof (window as any).gtag === 'function') {
           (window as any).gtag('event', 'conversion', {
             send_to: `${import.meta.env.VITE_GOOGLE_ADS_ID}/${import.meta.env.VITE_GOOGLE_ADS_CONVERSION_LABEL}`,
             value: 1.0,
