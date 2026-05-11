@@ -49,19 +49,21 @@ export default function LandingFooter({
 }) {
   const navigate = useNavigate();
   return (
-    <footer className="relative bg-white font-sans overflow-hidden ">
+    <footer className="relative bg-white font-sans ">
       {/* Blue CTA Banner Section */}
       <div className="relative z-20 px-4 md:px-8 lg:px-12 -mb-24">
-        <div className="mx-auto max-w-[1350px] overflow-hidden rounded-[40px] bg-[#4285F4] shadow-2xl">
-          <div className="relative grid items-center justify-center gap-2 px-6 py-12 md:px-16 lg:grid-cols-[2fr_1fr] lg:py-4">
+        <div className="mx-auto max-w-[1350px] rounded-[40px] bg-[#4285F4] shadow-2xl">
+          <div className="relative grid items-center justify-center gap-8 px-6 py-12 md:px-16 lg:grid-cols-[2fr_1fr] lg:gap-2 lg:py-4">
             {/* Background pattern (Ripple Effect) */}
-            <img
-              src={rippleEffect}
-              alt=""
-              width={775}
-              height={775}
-              className="absolute left-1/2 top-[25%] lg:left-auto lg:right-20 lg:top-1/2 -translate-y-1/2 -translate-x-1/2 lg:translate-x-1/4 opacity-100 pointer-events-none block w-full max-w-[400px] sm:max-w-[500px] lg:max-w-[600px] mix-blend-soft-light"
-            />
+            <div className="absolute inset-0 overflow-hidden rounded-[40px] pointer-events-none">
+              <img
+                src={rippleEffect}
+                alt=""
+                width={775}
+                height={775}
+                className="absolute left-1/2 top-[25%] lg:left-auto lg:right-20 lg:top-1/2 -translate-y-1/2 -translate-x-1/2 lg:translate-x-1/4 opacity-100 block w-full max-w-[400px] sm:max-w-[500px] lg:max-w-[600px] mix-blend-soft-light"
+              />
+            </div>
 
             <div className="relative z-10 order-2 lg:order-1 flex flex-col items-center text-center lg:items-start lg:text-left w-full">
               <h3 className="font-montserrat text-xl sm:text-2xl font-black tracking-wide text-white lg:text-[32px] lg:leading-[1.1]">
@@ -102,7 +104,7 @@ export default function LandingFooter({
                 <img
                   src={ctaImage}
                   alt="Product"
-                  className="w-full max-w-[320px] drop-shadow-[0_20px_50px_rgba(0,0,0,0.3)] lg:translate-x-10 lg:scale-110"
+                  className="w-full max-w-[280px] sm:max-w-[320px] lg:max-w-[350px] translate-x-3 lg:translate-x-10 scale-110 lg:scale-125 -translate-y-16 lg:-translate-y-10"
                 />
               )}
             </div>

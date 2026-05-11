@@ -13,15 +13,19 @@ import TestimonialsSection from '../components/landing/TestimonialsSection';
 import FaqSection, { type Faq } from '../components/landing/FaqSection';
 
 import bagImage from '../assets/Group 1410136867.png';
-import industriesBgSectionImage from '../assets/Frame 1000003310 (1).png';
 import polyBagsKeyFeaturesImage from '../assets/image 7.png';
 import customizedMailerBagImage from '../assets/Group 1410136869 (1).png';
 import polybagImage from '../assets/image 14.png';
 import { scrollToHash } from '../utils/scrollToHash';
 import footerPolyBagImage from '../assets/image 8.png';
-import polyMailer1 from '../assets/PolyMailer.png';
-import polyMailer2 from '../assets/PolyMailer2.png';
-import polyMailer3 from '../assets/PolyMailer3.png';
+// import polyMailer1 from '../assets/PolyMailer.png';
+// import polyMailer2 from '../assets/PolyMailer2.png';
+// import polyMailer3 from '../assets/PolyMailer3.png';
+import polyMailer4 from '../assets/PolyMailer4.png';
+import polyMailer5 from '../assets/PolyMailer5.png';
+import polyMailer6 from '../assets/PolyMailer6.png';
+import polyMailer7 from '../assets/PolyMailer7.png';
+import polyMailer8 from '../assets/PolyMailer8.png';
 
 /* ─── Data ───────────────────────────────────────────────── */
 const NAV_LINKS: NavLink[] = [
@@ -301,7 +305,13 @@ export default function PolyMailerBagsPage() {
 
         <ProductSizesSection
           sizes={PRODUCT_SIZES}
-          images={[polyMailer1, polyMailer2, polyMailer3]}
+          images={[
+            polyMailer4,
+            polyMailer5,
+            polyMailer6,
+            polyMailer7,
+            polyMailer8,
+          ]}
           frameImageAlt="Poly mailer size reference"
           onBuyNow={handleBuyNow}
         />
@@ -379,11 +389,9 @@ export default function PolyMailerBagsPage() {
 
         <IndustriesSection
           productImage={polybagImage}
-          sectionBgImage={industriesBgSectionImage}
           productImageAlt="Poly mailer use case"
           badge2="Custom Sizes & Thickness"
           badge1="Waterproof & Dustproof"
-          imageCardBg="#cce8fd"
           useCases={INDUSTRIES}
         />
 
