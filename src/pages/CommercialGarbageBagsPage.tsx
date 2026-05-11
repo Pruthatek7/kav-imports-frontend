@@ -12,9 +12,12 @@ import CustomizationSection from '../components/landing/CustomizationSection';
 import TestimonialsSection from '../components/landing/TestimonialsSection';
 import FaqSection, { type Faq } from '../components/landing/FaqSection';
 
-import bagImage from '../assets/image 5.png';
+import footerImage from '../assets/smallFooter.png';
+import keyFeatureBagImage from '../assets/keyFeaturesBag.png';
+import herobagImage from '../assets/2.png';
 import TwoBagsImage from '../assets/Group 1410136870.png';
-import bagAndBinImage from '../assets/image 15.png';
+import industriesBagImage from '../assets/industriesBagImage.png';
+
 import heroPatternLeft from '../assets/Group 237495.png';
 import heroPatternRight from '../assets/Group 237494.png';
 import heroMobilePattern from '../assets/Group 237495 (1).png';
@@ -23,8 +26,8 @@ import garbageBag1 from '../assets/garbagebag1.png';
 import garbageBag2 from '../assets/garbagebag2.png';
 import garbageBag3 from '../assets/garbagebag3.png';
 import garbageBag4 from '../assets/garbagebag4.png';
+import garbageBag5 from '../assets/garbagebag5.png';
 import { scrollToHash } from '../utils/scrollToHash';
-import industriesBgSectionImage from '../assets/Frame 1000003310 (1).png';
 
 /* ─── Data ───────────────────────────────────────────────── */
 const NAV_LINKS: NavLink[] = [
@@ -242,7 +245,7 @@ export default function CommercialGarbageBagsPage() {
               </div>
 
               <img
-                src={bagImage}
+                src={herobagImage}
                 alt="Commercial garbage bag"
                 width={580}
                 height={580}
@@ -309,7 +312,13 @@ export default function CommercialGarbageBagsPage() {
 
         <ProductSizesSection
           sizes={PRODUCT_SIZES}
-          images={[garbageBag1, garbageBag2, garbageBag3, garbageBag4]}
+          images={[
+            garbageBag1,
+            garbageBag2,
+            garbageBag5,
+            garbageBag3,
+            garbageBag4,
+          ]}
           frameImageAlt="Garbage bag size reference"
           onBuyNow={handleBuyNow}
         />
@@ -362,12 +371,12 @@ export default function CommercialGarbageBagsPage() {
                 className="relative z-0 w-full animate-pulse-slow opacity-80"
               />
               <img
-                src={bagImage}
+                src={keyFeatureBagImage}
                 alt="Heavy-duty garbage bags"
-                width={400}
-                height={400}
+                width={500}
+                height={500}
                 loading="lazy"
-                className="absolute top-5 right-10 z-10 drop-shadow-[0_30px_60px_rgba(0,0,0,0.2)]"
+                className="absolute top-1 left-6 z-10 drop-shadow-[0_30px_60px_rgba(0,0,0,0.2)]"
               />
             </div>
 
@@ -390,12 +399,10 @@ export default function CommercialGarbageBagsPage() {
         </section>
 
         <IndustriesSection
-          productImage={bagAndBinImage}
-          sectionBgImage={industriesBgSectionImage}
+          productImage={industriesBagImage}
           productImageAlt="Garbage bag use case"
           badge1="Custom Sizes & Thickness"
           badge2="Leak-Proof Design"
-          imageCardBg="#cae4ef"
           useCases={INDUSTRIES}
         />
 
@@ -426,7 +433,7 @@ export default function CommercialGarbageBagsPage() {
       <LandingFooter
         ctaTitle="Need Garbage Bags for Your Business?"
         ctaSubtitle="Partner with KAV Imports for reliable bulk supply of durable garbage bags designed for commercial waste management."
-        ctaImage={bagImage}
+        ctaImage={footerImage}
       />
     </div>
   );

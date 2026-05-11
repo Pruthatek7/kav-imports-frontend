@@ -1,4 +1,4 @@
-import { scrollToHash } from '../../utils/scrollToHash'
+import { scrollToHash } from '../../utils/scrollToHash';
 
 /**
  * "Customization Options" section shared by both landing pages.
@@ -9,23 +9,23 @@ export default function CustomizationSection({
   intro,
   bulletPoints,
   footerNote,
-  panelBg = '#B0CDFF',
+  panelBg = '#C1D8FF',
   productImage,
   productImageAlt = 'Custom product',
   ctaHref = '#contact',
   ctaLabel = 'Request Custom Quote',
   socialHandle = '@KAVImports',
 }: {
-  heading: string
-  intro?: string
-  bulletPoints: string[]
-  footerNote?: string
-  panelBg?: string
-  productImage: string
-  productImageAlt?: string
-  ctaHref?: string
-  ctaLabel?: string
-  socialHandle?: string
+  heading: string;
+  intro?: string;
+  bulletPoints: string[];
+  footerNote?: string;
+  panelBg?: string;
+  productImage: string;
+  productImageAlt?: string;
+  ctaHref?: string;
+  ctaLabel?: string;
+  socialHandle?: string;
 }) {
   return (
     <section id="customization" className="bg-white py-20 lg:py-28">
@@ -39,17 +39,34 @@ export default function CustomizationSection({
           style={{ background: panelBg }}
         >
           <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
-            <h3 className="text-3xl font-extrabold leading-tight text-slate-900 lg:text-4xl">{heading}</h3>
+            <h3 className="text-3xl font-extrabold leading-tight text-slate-900 lg:text-4xl">
+              {heading}
+            </h3>
             {intro && (
-              <p className="mt-4 text-[17px] font-medium leading-relaxed text-slate-700">{intro}</p>
+              <p className="mt-4 text-[17px] font-medium leading-relaxed text-slate-700">
+                {intro}
+              </p>
             )}
-            
+
             <ul className="mt-8 space-y-4 text-left">
               {bulletPoints.map((item) => (
-                <li key={item} className="flex items-center gap-3 text-[15px] font-bold text-slate-800 lg:text-base">
+                <li
+                  key={item}
+                  className="flex items-center gap-3 text-[15px] font-bold text-slate-800 lg:text-base"
+                >
                   <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-blue-500 text-white shadow-sm">
-                    <svg viewBox="0 0 24 24" fill="none" className="h-3.5 w-3.5" stroke="currentColor" strokeWidth="4">
-                      <path d="M5 13l4 4L19 7" strokeLinecap="round" strokeLinejoin="round" />
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      className="h-3.5 w-3.5"
+                      stroke="currentColor"
+                      strokeWidth="4"
+                    >
+                      <path
+                        d="M5 13l4 4L19 7"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
                     </svg>
                   </div>
                   {item}
@@ -58,15 +75,17 @@ export default function CustomizationSection({
             </ul>
 
             {footerNote && (
-              <p className="mt-6 text-[15px] font-bold text-slate-900">{footerNote}</p>
+              <p className="mt-6 text-[15px] font-bold text-slate-900">
+                {footerNote}
+              </p>
             )}
 
             <a
               href={ctaHref}
               className="mt-10 inline-flex items-center justify-center rounded-full bg-black px-12 py-4.5 text-base font-bold !text-white shadow-lg transition hover:-translate-y-1 hover:shadow-xl active:scale-95"
               onClick={(e) => {
-                e.preventDefault()
-                scrollToHash(ctaHref)
+                e.preventDefault();
+                scrollToHash(ctaHref);
               }}
             >
               {ctaLabel}
@@ -78,19 +97,21 @@ export default function CustomizationSection({
             <img
               src={productImage}
               alt={productImageAlt}
-              width={600}
-              height={600}
+              width={500}
+              height={500}
               loading="lazy"
-              className="relative z-10 mx-auto w-full drop-shadow-[0_30px_60px_rgba(0,0,0,0.15)] transition-transform duration-500 hover:scale-105"
+              className="relative z-10 mx-auto w-full  transition-transform duration-500 hover:scale-105"
             />
           </div>
         </div>
 
         <div className="mt-8 flex flex-row items-center justify-center gap-2">
           <p className="text-md font-bold text-slate-400">Join us</p>
-          <p className="text-md font-black tracking-tight text-blue-500 lg:text-md">{socialHandle}</p>
+          <p className="text-md font-black tracking-tight text-blue-500 lg:text-md">
+            {socialHandle}
+          </p>
         </div>
       </div>
     </section>
-  )
+  );
 }
